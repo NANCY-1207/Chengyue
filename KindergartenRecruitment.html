@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 員工召募</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 引入 Font Awesome 圖示庫 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 */
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      .page-title-wrapper {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .page-title {
+        color: var(--brand-blue);
+        font-weight: 700;
+        border-bottom: 3px solid var(--brand-orange);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+        letter-spacing: 2px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 80px 0;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .section-wrapper:hover {
+        transform: translateY(-3px);
+      }
+
+      /* 背景色設定 */
+      .bg-light-blue {
+        background-color: rgba(0, 129, 167, 0.08); /* 品牌藍淡色 */
+      }
+
+      .bg-warm-egg {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      .bg-light-green {
+        background-color: rgba(0, 175, 185, 0.15); /* 品牌綠淡色 */
+      }
+
+      .bg-light-orange {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      /* 文字樣式 */
+      .feature-subtitle {
+        color: var(--brand-green);
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      .feature-subtitle::before {
+        content: "●";
+        color: var(--brand-orange);
+        margin-right: 10px;
+      }
+
+      .intro-text {
+        font-size: 1.15rem;
+        line-height: 2.2;
+        color: #444;
+        text-align: justify;
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight {
+        color: var(--brand-blue);
+        font-weight: 700;
+      }
+
+      /* [修改] 特質卡片樣式 (適應 Grid 排版) */
+      .recruit-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 25px;
+        /* margin-bottom: 20px;  <-- 移除，改由 Grid gap 控制 */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        border-left: 5px solid var(--brand-blue); /* 左側藍色線條裝飾 */
+        height: 100%; /* 確保卡片等高 */
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+      }
+      .recruit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-left-color: var(--brand-orange); /* Hover 變色 */
+      }
+
+      .recruit-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--brand-blue);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+
+      .recruit-num {
+        background: var(--brand-orange);
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        margin-right: 12px;
+        flex-shrink: 0;
+        font-weight: 700;
+      }
+
+      .recruit-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+        padding-left: 0; /* 移除原本的縮排，因為現在是卡片 */
+        flex-grow: 1; /* 讓文字區塊填滿剩餘空間 */
+      }
+
+      /* 福利清單樣式 */
+      .welfare-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .welfare-item {
+        background: #fff;
+        padding: 15px 25px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        color: #444;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s;
+      }
+
+      .welfare-item:hover {
+        transform: scale(1.02);
+        color: var(--brand-blue);
+      }
+
+      .check-icon {
+        color: var(--brand-green);
+        margin-right: 15px;
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 頁面標題區 -->
+    <div class="container page-title-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-md-start">
+          <h1 class="page-title">員工召募 RECRUITMENT</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area container mb-5">
+      <!-- ========================================== -->
+      <!-- 1. 引言：教育是一場陪伴 (淡藍底) -> 純文字 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-intro">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <h2 class="feature-subtitle">尋找溫柔而堅定的引導者</h2>
+
+              <p class="intro-text">
+                🌿 我們正在尋找一位<span class="highlight"
+                  >溫柔而堅定的引導者</span
+                >，一位願意蹲下來看見孩子、陪他們慢慢長大的老師。如果你熟悉蒙特梭利理念，或渴望在真誠、秩序與尊重的教育環境中教學，歡迎加入我們。
+              </p>
+              <p class="intro-text">
+                在這裡，孩子是主角，老師是靜靜守護的光。那些靜靜觀察孩子操作教具的時刻，那些陪伴孩子挫折後又重新嘗試的瞬間，是否也讓你相信：「<strong>教育，是一場深刻的陪伴</strong>」？
+              </p>
+              <p class="intro-text">
+                🌱
+                教育不是灌輸，而是點燃孩子內在的學習火花。誠悅是重視「尊重、自由與秩序」的蒙特梭利幼兒園，現正招募具理念認同、願意長期耕耘幼兒教育的老師。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 2. 徵才特質 (淡橘底) -> [修改] 卡片式網格排版 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-features">
+        <div class="container">
+          <h2 class="feature-subtitle">我們期待的夥伴特質</h2>
+
+          <div class="row g-4">
+            <!-- Item 1 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">1</span>具備蒙特梭利培訓背景
+                </div>
+                <div class="recruit-desc">
+                  擁有AMI/AMS/MACTE認證的蒙特梭利師資培訓者為首選。<br />若無證書，也需具備強烈興趣與學習意願，並了解蒙氏核心理念。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">2</span>理解並尊重「孩子是主角」
+                </div>
+                <div class="recruit-desc">
+                  懂得「引導而非干預」、「觀察而非主導」、「等待而非催促」。家長喜歡老師能讓孩子自主探索，而不是安排過多成人視角的活動。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">3</span>觀察力與紀錄能力強
+                </div>
+                <div class="recruit-desc">
+                  能細緻記錄孩子的敏感期與學習歷程，回饋給家長。懂得透過觀察調整教具選擇與教學引導，而非一視同仁照本宣科。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">4</span>熟悉蒙氏教具的使用與引導
+                </div>
+                <div class="recruit-desc">
+                  能精準介紹教具、知道每個教具的目的與順序。知道什麼時候該「介入」、什麼時候該「退出」，避免干擾專注力。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">5</span>尊重孩子節奏，培養內在秩序
+                </div>
+                <div class="recruit-desc">
+                  知道「慢、靜、柔」的重要性，營造安定、沉靜、有秩序的教室氛圍。家長會信任能幫助孩子「獨立但不疏離」、「自主而有規律」的老師。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">6</span>親師合作意願強
+                </div>
+                <div class="recruit-desc">
+                  能讓家長理解蒙氏教學背後的設計原理，而不是覺得「放牛吃草」。願意與家長共同引導孩子，而不是強調「專業不能被質疑」。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">7</span>具有內在穩定與成熟的心靈特質
+                </div>
+                <div class="recruit-desc">
+                  蒙特梭利老師不只是教孩子，更是「榜樣」—語氣柔和、舉止安定、不急不躁。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">8</span>善於設計支持性環境
+                </div>
+                <div class="recruit-desc">
+                  了解環境即課程，能設計具有秩序感、美感、選擇自由的教室環境。包含：教具擺放、光線動線、自由活動區、自然素材選擇等。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">9</span>能與同儕協作，不陷入個人主義
+                </div>
+                <div class="recruit-desc">
+                  蒙氏環境強調師資協作：主教老師＋副教老師必須理念一致、教學互補。能體悟團隊合作的重要性。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 10 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">10</span>有國際觀
+                </div>
+                <div class="recruit-desc">
+                  能與不同文化家庭的家長溝通，也有助於國際視野的建立。接受、包容並尊重家長和孩子的文化習俗。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 11 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">11</span>有與家長共學、教育引導經驗
+                </div>
+                <div class="recruit-desc">
+                  蒙氏教育常被誤解，家長希望老師能「教孩子的同時，也願意教父母」。能設計家長說明會、親職講座、寫親子回饋紀錄。
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 12 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="recruit-card">
+                <div class="recruit-title">
+                  <span class="recruit-num">12</span
+                  >認同「生命教育」與「長期陪伴」
+                </div>
+                <div class="recruit-desc">
+                  認同不是只看學習成果，而是陪伴心靈成長。用一致、溫柔又堅定的態度，讓孩子知道他被接納、被看見。陪伴孩子從錯誤中學習，而非立即糾正與責備。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 3. 校園福利 (淡綠底) -> 純文字清單 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-welfare">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <h2 class="feature-subtitle">校園福利與支持 🎁</h2>
+
+              <ul class="welfare-list">
+                <li class="welfare-item">
+                  <i class="fa-solid fa-circle-check check-icon"></i
+                  >勞健保、勞退提撥（依法保障）
+                </li>
+                <li class="welfare-item">
+                  <i class="fa-solid fa-circle-check check-icon"></i
+                  >三節獎金、生日禮金
+                </li>
+                <li class="welfare-item">
+                  <i class="fa-solid fa-circle-check check-icon"></i
+                  >定期調薪或績效考核制度
+                </li>
+                <li class="welfare-item">
+                  <i class="fa-solid fa-circle-check check-icon"></i
+                  >完整新人訓練與教學帶領制度
+                </li>
+                <li class="welfare-item">
+                  <i class="fa-solid fa-circle-check check-icon"></i
+                  >提供進修補助／蒙特梭利進修費用補貼
+                </li>
+                <li class="welfare-item">
+                  <i class="fa-solid fa-circle-check check-icon"></i>支援 AMI /
+                  AMS 國際認證進修管道
+                </li>
+                <li class="welfare-item">
+                  <i class="fa-solid fa-circle-check check-icon"></i
+                  >子女就讀優惠
+                </li>
+                <li class="welfare-item">
+                  <i class="fa-solid fa-circle-check check-icon"></i
+                  >教室備品與教具經費充足，環境安定好工作
+                </li>
+                <li class="welfare-item">
+                  <i class="fa-solid fa-circle-check check-icon"></i
+                  >完善的班級人力配置（主教＋副教）
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              $("#divHeader").load("../header.html");
+            } else {
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

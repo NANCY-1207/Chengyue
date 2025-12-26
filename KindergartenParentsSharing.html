@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 家長分享</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 3. 引入主樣式表 (讀取變數) -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 */
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      .page-title-wrapper {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .page-title {
+        color: var(--brand-blue); /* [修改] 品牌藍 */
+        font-weight: 700;
+        border-bottom: 3px solid var(--brand-orange); /* [修改] 品牌橘 */
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+        letter-spacing: 2px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 60px 0;
+      }
+
+      .bg-light-warm {
+        background-color: #fffef0; /* [修改] 統一使用暖色蛋殼白 */
+      }
+
+      /* 分享卡片樣式 */
+      .sharing-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        /* [修改] 邊框改用品牌色淡淡的線條 */
+        border: 1px solid rgba(0, 129, 167, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sharing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        border-color: var(--brand-orange); /* Hover 時變橘色 */
+      }
+
+      .quote-icon-large {
+        position: absolute;
+        top: -10px;
+        right: 15px;
+        font-size: 6rem;
+        color: rgba(0, 0, 0, 0.03); /* [修改] 更淡的浮水印 */
+        font-family: serif;
+        z-index: 0;
+        line-height: 1;
+        pointer-events: none;
+      }
+
+      .card-content {
+        position: relative;
+        z-index: 1;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* --- 家長資訊 --- */
+      .parent-header {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .parent-name {
+        font-weight: 700;
+        color: var(--brand-blue); /* [修改] 品牌藍 */
+        font-size: 1.1rem;
+        margin-bottom: 0;
+        display: inline-block;
+      }
+
+      .child-class {
+        font-size: 0.9rem;
+        color: #888;
+        margin-left: 10px;
+        font-weight: 500;
+        display: inline-block;
+      }
+
+      /* --- 內文區域 --- */
+      .sharing-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--brand-green); /* [修改] 品牌綠 */
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .sharing-text {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #555;
+        text-align: justify;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+
+      /* 了解更多按鈕 */
+      .btn-card-more {
+        align-self: flex-start;
+        font-size: 0.9rem;
+        color: var(--brand-orange); /* [修改] 品牌橘 */
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid var(--brand-orange); /* [修改] 品牌橘 */
+        padding: 6px 16px;
+        border-radius: 20px;
+        transition: all 0.3s;
+        margin-top: auto;
+      }
+
+      .btn-card-more:hover {
+        background-color: var(--brand-orange);
+        color: #fff;
+      }
+
+      /* 分頁按鈕樣式 */
+      .pagination .page-link {
+        color: var(--brand-blue); /* [修改] 品牌藍 */
+        border-radius: 50%;
+        margin: 0 5px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        font-weight: 600;
+      }
+
+      .pagination .page-link:hover {
+        background-color: #fff3e0; /* 淡橘色背景 */
+        color: var(--brand-orange);
+      }
+
+      .pagination .active .page-link {
+        background-color: var(--brand-blue); /* [修改] 品牌藍 */
+        color: #fff;
+      }
+
+      .pagination .disabled .page-link {
+        color: #ccc;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 頁面標題區 -->
+    <div class="container page-title-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-md-start">
+          <h1 class="page-title">家長分享 PARENTS SHARING</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area">
+      <!-- 分享列表區塊 -->
+      <section class="section-wrapper bg-light-warm">
+        <div class="container">
+          <div class="row g-4">
+            <!-- 分享 1 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="sharing-card">
+                <div class="quote-icon-large">”</div>
+                <div class="card-content">
+                  <div class="parent-header">
+                    <span class="parent-name">陳媽媽</span>
+                    <span class="child-class">大班 / 家長</span>
+                  </div>
+                  <p class="sharing-text">
+                    女兒從幼幼班一路成長到現在的大班也準備要畢業了，回想著她的成長過程，我充滿感動與感謝，現在的她不但能獨立完成許多事情，做事也能冷靜思考、清楚的規劃並完成交付給她的事情...
+                  </p>
+                  <a href="#" class="btn-card-more">了解更多 &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 分享 2 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="sharing-card">
+                <div class="quote-icon-large">”</div>
+                <div class="card-content">
+                  <div class="parent-header">
+                    <span class="parent-name">林爸爸</span>
+                    <span class="child-class">中班 / 家長</span>
+                  </div>
+                  <p class="sharing-text">
+                    看著孩子每天開心地去上學，回家分享在學校的點點滴滴，我們知道選擇誠悅是對的。老師們的耐心引導，讓孩子在蒙特梭利的環境中找到了自信...
+                  </p>
+                  <a href="#" class="btn-card-more">了解更多 &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 分享 3 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="sharing-card">
+                <div class="quote-icon-large">”</div>
+                <div class="card-content">
+                  <div class="parent-header">
+                    <span class="parent-name">王媽媽</span>
+                    <span class="child-class">小班 / 家長</span>
+                  </div>
+                  <p class="sharing-text">
+                    原本很擔心孩子無法適應團體生活，但在誠悅溫暖的環境下，他變得喜歡與人互動，也學會了照顧自己。這裡的混齡教學真的很棒...
+                  </p>
+                  <a href="#" class="btn-card-more">了解更多 &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 分享 4 -->
+            <div class="col-md-6 col-lg-4">
+              <div class="sharing-card">
+                <div class="quote-icon-large">”</div>
+                <div class="card-content">
+                  <div class="parent-header">
+                    <span class="parent-name">張爸爸</span>
+                    <span class="child-class">中班 / 家長</span>
+                  </div>
+                  <p class="sharing-text">
+                    這裡的老師非常專業，對於蒙特梭利教育有很深的理解。我們看到了孩子在專注力與秩序感上的顯著進步，非常感謝學校的用心...
+                  </p>
+                  <a href="#" class="btn-card-more">了解更多 &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 分享 5 (佔位) -->
+            <div class="col-md-6 col-lg-4">
+              <div class="sharing-card">
+                <div class="quote-icon-large">”</div>
+                <div class="card-content">
+                  <div class="parent-header">
+                    <span class="parent-name">李媽媽</span>
+                    <span class="child-class">幼幼班 / 家長</span>
+                  </div>
+                  <p class="sharing-text">
+                    第一次送孩子上學總是充滿不捨與擔憂，但看到老師們像家人一樣對待孩子，讓我們非常放心。孩子每天的笑容就是最好的證明...
+                  </p>
+                  <a href="#" class="btn-card-more">了解更多 &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 分享 6 (佔位) -->
+            <div class="col-md-6 col-lg-4">
+              <div class="sharing-card">
+                <div class="quote-icon-large">”</div>
+                <div class="card-content">
+                  <div class="parent-header">
+                    <span class="parent-name">劉爸爸</span>
+                    <span class="child-class">大班 / 家長</span>
+                  </div>
+                  <p class="sharing-text">
+                    感謝誠悅給了孩子一個這麼棒的童年回憶。在這裡，他學會的不只是知識，更重要的是如何做人處事，以及對學習的熱情...
+                  </p>
+                  <a href="#" class="btn-card-more">了解更多 &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 分頁按鈕區 -->
+          <div class="mt-5 d-flex justify-content-center">
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // [修正] 載入 Header
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              // Fallback
+              $("#divHeader").load("../header.html");
+            } else {
+              // 自動調整圖片與連結路徑
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                // Active 狀態
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // [修正] 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            // 自動調整圖片路徑
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

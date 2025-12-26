@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 入學資訊</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 引入 Font Awesome 圖示庫 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 */
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      .page-title-wrapper {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .page-title {
+        color: var(--brand-blue);
+        font-weight: 700;
+        border-bottom: 3px solid var(--brand-orange);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+        letter-spacing: 2px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 80px 0;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .section-wrapper:hover {
+        transform: translateY(-3px);
+      }
+      /* 背景色設定 */
+      .bg-light-blue {
+        background-color: rgba(0, 129, 167, 0.08); /* 品牌藍淡色 */
+      }
+
+      .bg-warm-egg {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      .bg-light-green {
+        background-color: rgba(0, 175, 185, 0.15); /* 品牌綠淡色 */
+      }
+
+      .bg-light-orange {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+      /* 標題樣式 */
+      .feature-subtitle {
+        color: var(--brand-green);
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      .feature-subtitle::before {
+        content: "●";
+        color: var(--brand-orange);
+        margin-right: 10px;
+      }
+
+      /* --- 1. 入學年齡卡片 --- */
+      .age-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-top: 5px solid var(--brand-blue);
+        height: 100%;
+        transition: transform 0.3s;
+      }
+      .age-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .age-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--brand-blue);
+        margin-bottom: 10px;
+      }
+      .age-range {
+        font-size: 1.1rem;
+        color: #555;
+        font-weight: 500;
+      }
+
+      /* --- 2. 入學指南步驟 --- */
+      .guide-step {
+        background: #fff;
+        padding: 20px 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border-left: 5px solid var(--brand-orange);
+      }
+      .step-number {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        font-size: 3rem;
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.03);
+        z-index: 0;
+      }
+      .step-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--brand-orange);
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+      }
+      .step-list {
+        padding-left: 20px;
+        margin-bottom: 0;
+        position: relative;
+        z-index: 1;
+      }
+      .step-list li {
+        margin-bottom: 5px;
+        color: #555;
+        font-size: 0.95rem;
+      }
+
+      /* --- 3. 入學準備 (圖文交錯) --- */
+      .prep-box {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-left: 5px solid var(--brand-green);
+        margin-bottom: 20px;
+      }
+      .prep-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--brand-green);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+      .prep-title i {
+        margin-right: 10px;
+        font-size: 1.4rem;
+      }
+      .prep-list li {
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+        color: #555;
+      }
+
+      /* --- 4. 備用品卡片 --- */
+      .supply-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+      }
+      .supply-item {
+        background: #fff;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        font-weight: 600;
+        color: var(--brand-blue);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .supply-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        display: block;
+        color: var(--brand-orange);
+      }
+
+      /* 圖片展示區域樣式 */
+      .guide-photo {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        border: 8px solid #fff;
+        transition: transform 0.3s ease;
+      }
+      .guide-photo:hover {
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 頁面標題區 -->
+    <div class="container page-title-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-md-start">
+          <h1 class="page-title">入學資訊 ADMISSION INFO</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area container mb-5">
+      <!-- 1. 入學年齡 (淡藍底) -->
+      <section class="section-wrapper bg-light-blue">
+        <div class="container">
+          <h2 class="feature-subtitle">入學年齡</h2>
+
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-3">
+              <div
+                class="age-card"
+                style="border-top-color: var(--brand-green)"
+              >
+                <div class="age-title">貝貝班 (幼幼)</div>
+                <div class="age-range">滿 2 足歲</div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div
+                class="age-card"
+                style="border-top-color: var(--brand-orange)"
+              >
+                <div class="age-title">小班</div>
+                <div class="age-range">110/9/2 ~ 111/9/1</div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="age-card" style="border-top-color: var(--brand-blue)">
+                <div class="age-title">中班</div>
+                <div class="age-range">109/9/2 ~ 110/9/1</div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="age-card" style="border-top-color: #ffc107">
+                <div class="age-title">大班</div>
+                <div class="age-range">108/9/2 ~ 109/9/1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 入學指南 (暖色底) - 左右排版 -->
+      <section class="section-wrapper bg-warm-egg">
+        <div class="container">
+          <h2 class="feature-subtitle">入學指南</h2>
+
+          <div class="row align-items-center g-5">
+            <!-- 左側步驟 (佔 7 格) -->
+            <div class="col-lg-7">
+              <div class="row g-4">
+                <!-- Step 1 -->
+                <div class="col-12">
+                  <div class="guide-step">
+                    <span class="step-number">01</span>
+                    <h3 class="step-title">一、參觀校園</h3>
+                    <ul class="step-list">
+                      <li>1. 來電預約參觀</li>
+                      <li>2. 依照約定時間入園參觀</li>
+                      <li>3. 完成新生入學會談及填寫幼兒基礎資料</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-12">
+                  <div
+                    class="guide-step"
+                    style="border-left-color: var(--brand-blue)"
+                  >
+                    <span class="step-number">02</span>
+                    <h3 class="step-title" style="color: var(--brand-blue)">
+                      二、確定名額與預定
+                    </h3>
+                    <ul class="step-list">
+                      <li>1. 完成繳費手續</li>
+                      <li>
+                        2. 家長繳交資料
+                        (戶口名簿、預防接種調查表、肖像權同意書、教保契約書)
+                      </li>
+                      <li>3. 與班導師確認幼兒入學時間、生活狀況</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-12">
+                  <div
+                    class="guide-step"
+                    style="border-left-color: var(--brand-green)"
+                  >
+                    <span class="step-number">03</span>
+                    <h3 class="step-title" style="color: var(--brand-green)">
+                      三、優先條件
+                    </h3>
+                    <ul class="step-list">
+                      <li>1. 本園小朋友 (幼兒) 的弟弟妹妹</li>
+                      <li>2. 本園畢業生兄弟姐妹</li>
+                      <li>3. 父母於本園就職者或畢業者</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 右側圖片 (佔 5 格) -->
+            <div class="col-lg-5 text-center">
+              <img
+                src="../image/入學指南.jpg"
+                alt="入學指南照片"
+                class="guide-photo"
+                onerror="this.src='https://placehold.co/600x800/fff3e0/f09967?text=Admission+Guide'"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 入學前的準備 (淡綠底) -->
+      <section class="section-wrapper bg-light-green mb-0">
+        <div class="container">
+          <h2 class="feature-subtitle">入學前的準備</h2>
+
+          <div class="row g-4">
+            <!-- 心理層面 -->
+            <div class="col-lg-6">
+              <div class="prep-box">
+                <h3 class="prep-title">
+                  <i class="fa-solid fa-heart"></i>一、心理層面的準備
+                </h3>
+                <ul class="prep-list ps-3">
+                  <li>1. 家長以正面的態度與孩子聊一聊幼兒園的生活</li>
+                  <li>2. 幫助他們建立安全感與期待感</li>
+                  <li>3. 讓孩子了解幼兒園的日常與規範</li>
+                  <li>4. 培養基本的生活技巧，以愛與耐心陪伴過渡</li>
+                  <li>5. 讓孩子安心踏出成長的第一步</li>
+                </ul>
+              </div>
+
+              <div
+                class="prep-box"
+                style="border-left-color: var(--brand-blue)"
+              >
+                <h3 class="prep-title" style="color: var(--brand-blue)">
+                  <i class="fa-solid fa-user-doctor"></i>二、健康上的準備
+                </h3>
+                <ul class="prep-list ps-3">
+                  <li>1. 培養良好的生活習慣，均衡飲食，充足睡眠與規律作習</li>
+                  <li>2. 幼兒預防注射影印本</li>
+                  <li>
+                    3.
+                    幼兒若對某種食物過敏，請確實告知我們，以便在飲食方面特別防範
+                  </li>
+                  <li>4. 託藥單時間、日期、簽名與藥量次數確實填寫</li>
+                  <li>
+                    5. 若有急性傳染病或其他身體不適之症狀，請讓幼兒在家休息
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 備用品 -->
+            <div class="col-lg-6">
+              <div
+                class="prep-box"
+                style="border-left-color: var(--brand-orange); height: 100%"
+              >
+                <h3 class="prep-title" style="color: var(--brand-orange)">
+                  <i class="fa-solid fa-suitcase"></i>三、備用品的準備
+                </h3>
+
+                <div class="supply-grid mt-4">
+                  <div class="supply-item">
+                    <span class="supply-icon"
+                      ><i class="fa-solid fa-shirt"></i
+                    ></span>
+                    換洗衣物 2 套
+                  </div>
+                  <div class="supply-item">
+                    <span class="supply-icon"
+                      ><i class="fa-solid fa-bag-shopping"></i
+                    ></span>
+                    髒衣袋
+                  </div>
+                  <div class="supply-item">
+                    <span class="supply-icon"
+                      ><i class="fa-solid fa-bed"></i
+                    ></span>
+                    睡袋 (小被子)
+                  </div>
+                  <div class="supply-item">
+                    <span class="supply-icon"
+                      ><i class="fa-solid fa-bottle-water"></i
+                    ></span>
+                    水壺
+                  </div>
+                  <div class="supply-item">
+                    <span class="supply-icon"
+                      ><i class="fa-solid fa-tooth"></i
+                    ></span>
+                    牙刷/牙杯/牙膏
+                  </div>
+                  <div class="supply-item">
+                    <span class="supply-icon"
+                      ><i class="fa-solid fa-box-tissue"></i
+                    ></span>
+                    濕紙巾/口水巾
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              $("#divHeader").load("../header.html");
+            } else {
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 教育理念</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- [新增] 引入 Font Awesome 圖示庫 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 */
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      .page-title-wrapper {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .page-title {
+        color: var(--brand-blue);
+        font-weight: 700;
+        border-bottom: 3px solid var(--brand-orange);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+        letter-spacing: 2px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 80px 0;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .section-wrapper:hover {
+        transform: translateY(-3px);
+      }
+
+      /* 背景色設定 */
+      .bg-light-blue {
+        background-color: rgba(0, 129, 167, 0.08); /* 品牌藍淡色 */
+      }
+
+      .bg-warm-egg {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      .bg-light-green {
+        background-color: rgba(0, 175, 185, 0.15); /* 品牌綠淡色 */
+      }
+
+      .bg-light-orange {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      /* 核心標語區 */
+      .slogan-section {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .main-slogan {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--brand-blue);
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+      }
+
+      .sub-slogan {
+        font-size: 1.2rem;
+        color: #666;
+        font-weight: 500;
+      }
+
+      /* 核心價值卡片 */
+      .value-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        border-top: 5px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .value-icon {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        display: block;
+        transition: transform 0.3s;
+      }
+
+      .value-card:hover .value-icon {
+        transform: scale(1.1);
+      }
+
+      .value-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #333;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      .value-desc {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      /* 特定顏色設定 (使用自訂色或品牌色) */
+      .card-sincerity {
+        border-top-color: var(--brand-orange); /* 誠心 - 橘 */
+      }
+      .text-sincerity {
+        color: var(--brand-orange);
+      }
+
+      .card-freedom {
+        border-top-color: var(--brand-green); /* 自在 - 綠 */
+      }
+      .text-freedom {
+        color: var(--brand-green);
+      }
+
+      .card-joy {
+        border-top-color: #ffc107; /* 喜悅 - 黃 */
+      }
+      .text-joy {
+        color: #ffc107;
+      }
+
+      /* [新增] 理念區塊圖片樣式 */
+      .philosophy-img {
+        width: 100%;
+        height: auto;
+        max-height: 450px; /* 限制最大高度 */
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 5px solid #fff;
+      }
+
+      /* 誠悅期待區塊 (文字框) */
+      .expectation-box {
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 40px 30px; /* [修改] 調整內距適應半寬 */
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        /* [修改] 左側邊框改為綠色 */
+        border-left: 5px solid var(--brand-green);
+        height: 100%; /* 讓它盡量填滿高度 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* 裝飾引號 */
+      .expectation-box::before {
+        content: '"';
+        font-size: 6rem; /* [修改] 稍微縮小引號 */
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        /* [修改] 引號顏色改為淡綠色 */
+        color: rgba(29, 122, 87, 0.1);
+        font-family: serif;
+        z-index: 0;
+      }
+
+      .expectation-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        /* [修改] 標題顏色改為品牌綠 */
+        color: var(--brand-green);
+        margin-bottom: 25px;
+        text-align: left; /* [修改] 改為靠左對齊 */
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        z-index: 1;
+      }
+
+      .expectation-text {
+        font-size: 1.1rem; /* [修改] 稍微調整字體大小 */
+        line-height: 1.9;
+        color: #444;
+        text-align: justify;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .highlight {
+        font-weight: 700;
+        /* [修改] 重點文字顏色改為品牌綠 */
+        color: var(--brand-green);
+        /* 螢光筆效果 - 改為綠色系 */
+        background: linear-gradient(
+          120deg,
+          rgba(0, 175, 185, 0) 0%,
+          rgba(0, 175, 185, 0.2) 100%
+        );
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: 0 88%;
+        padding: 0 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 頁面標題區 -->
+    <div class="container page-title-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-md-start">
+          <h1 class="page-title">教育理念 PHILOSOPHY</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area container mb-5">
+      <!-- 1. 核心標語與價值 (暖色背景) -->
+      <section class="section-wrapper bg-warm-egg">
+        <div class="container">
+          <div class="slogan-section">
+            <h2 class="main-slogan">JOY 誠悅 - 以兒童為中心，放眼全世界</h2>
+            <p class="sub-slogan">培養具備世界觀、獨立思考與關懷之心的孩子</p>
+          </div>
+
+          <div class="row g-4 justify-content-center">
+            <!-- 誠心 -->
+            <div class="col-md-4">
+              <div class="value-card card-sincerity">
+                <i
+                  class="fa-solid fa-hand-holding-heart value-icon text-sincerity"
+                ></i>
+                <h3 class="value-title text-sincerity">誠心</h3>
+                <p class="value-desc">善學育識<br />以心養德</p>
+              </div>
+            </div>
+
+            <!-- 自在 -->
+            <div class="col-md-4">
+              <div class="value-card card-freedom">
+                <i class="fa-solid fa-dove value-icon text-freedom"></i>
+                <h3 class="value-title text-freedom">自在</h3>
+                <p class="value-desc">自我察覺<br />主動學習</p>
+              </div>
+            </div>
+
+            <!-- 喜悅 -->
+            <div class="col-md-4">
+              <div class="value-card card-joy">
+                <i class="fa-regular fa-face-smile value-icon text-joy"></i>
+                <h3 class="value-title text-joy">喜悅</h3>
+                <p class="value-desc">喜樂心悅<br />順應自然</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 誠悅期待 (改為淡綠背景) - 圖文並排 -->
+      <section class="section-wrapper bg-light-green">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 圖片區塊 (右) - 設定 order-lg-2 -->
+            <div class="col-lg-6 order-lg-2 text-center">
+              <!-- [新增] 佔位圖片，請替換為實際照片 -->
+              <img
+                src="../image/誠悅期待.jpg"
+                alt="誠悅期待"
+                class="philosophy-img"
+              />
+            </div>
+
+            <!-- 文字區塊 (左) - 設定 order-lg-1 -->
+            <div class="col-lg-6 order-lg-1">
+              <div class="expectation-box">
+                <h3 class="expectation-title">誠悅期待</h3>
+
+                <p class="expectation-text">
+                  啟蒙教育是讓小朋友們的生理身體、專注意志、情緒感知、智慧知能等面向，在不同的成長階段，皆能獲得<span
+                    class="highlight"
+                    >平衡的發展</span
+                  >。
+                </p>
+                <p class="expectation-text">
+                  另一方面，每個小朋友都是獨特的，在其自然成長基本法則之上，JOY誠悅期待帶領小朋友們領略感受週遭人、事、物，開啟感官的體驗連結，<span
+                    class="highlight"
+                    >尊重小朋友們的個別差異與學習歷程</span
+                  >。
+                </p>
+                <p class="expectation-text mb-0">
+                  JOY誠悅相信<strong>快樂先於學習</strong>，期待小朋友們都能在真誠、善識、美行的全人教育前提下，成為<span
+                    class="highlight"
+                    >獨立自由的自己</span
+                  >。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header (使用幼兒園專用 Header)
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              // Fallback
+              $("#divHeader").load("../header.html");
+            } else {
+              // 自動調整圖片與連結路徑
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                // 連結 Active 狀態
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            // 自動調整圖片路徑
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

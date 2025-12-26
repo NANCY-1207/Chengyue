@@ -1,0 +1,385 @@
+<!-- 
+  [幼兒園版] 導覽列片段 (Fragment)
+  * 請將此檔案存為 header_kindergarten.html
+  * 透過 $("#divHeader").load() 載入
+  * 注意：樣式已移至 Kindergarten.css，請在主頁面引入該 CSS
+-->
+
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="../index.html">
+        <img src="../image/Logo.jpg" alt="logo" />
+        <div class="brand-text">
+          JOY Montessori Educating Center<br />
+          JOY 誠悅蒙特梭利兒童教育機構
+        </div>
+      </a>
+
+      <!-- 漢堡按鈕 -->
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#kindergartenMenu"
+        aria-controls="kindergartenMenu"
+        aria-expanded="false"
+        aria-label="切換導覽"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- 導覽連結清單 -->
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="kindergartenMenu"
+      >
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <!-- 1. 校園訊息 -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              aria-expanded="false"
+            >
+              校園訊息<br /><span style="font-size: 0.75em; color: #666"
+                >INFORMATION</span
+              >
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="KindergartenNew.html"
+                  >最新訊息</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenAdmission.html"
+                  >招生資訊</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenEvents.html"
+                  >活動公告/公益活動</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- 2. 誠悅校園 -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              aria-expanded="false"
+            >
+              誠悅校園<br /><span style="font-size: 0.75em; color: #666"
+                >ENVIRONMENT</span
+              >
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item"
+                  KindergartenIndoorOutdoorSpace
+                  href="KindergartenEnvironmentalConstruction.html"
+                  >環境建構理念</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="KindergartenIndoorOutdoorSpace.html"
+                  >自在室內戶外遊戲空間/多元活動場域</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="KindergartenClassroomBathroom.html"
+                  >明亮教室與廊道/兒童衛浴設備</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenAdminCenter.html"
+                  >中央廚房設備/行政管理中心</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- 3. 教育理念 -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              aria-expanded="false"
+            >
+              教育理念<br /><span style="font-size: 0.75em; color: #666"
+                >PHILOSOPHY</span
+              >
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="KindergartenLogoStory.html"
+                  >Logo story</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="KindergartenEducationPhilosophy.html"
+                  >教育理念</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="KindergartenEducationPartners.html"
+                  >誠悅教育夥伴</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenTeacherGrowth.html"
+                  >理念實踐成長</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenParentsSharing.html"
+                  >家長分享</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- 4. 教學特色 -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              aria-expanded="false"
+            >
+              教學特色<br /><span style="font-size: 0.75em; color: #666"
+                >FEATURES</span
+              >
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="KindergartenMontessoriTheory.html"
+                  >蒙特梭利教育理論</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenDailySensory.html"
+                  >日常生活教育/感官發展教育</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenMathLanguage.html"
+                  >算術邏輯教育/語文建構學習</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="KindergartenInternationalCulture.html"
+                  >國際文化培育</a
+                >
+              </li>
+              <li><a class="dropdown-item" href="#">體能運動</a></li>
+              <li><a class="dropdown-item" href="#">音感音樂</a></li>
+              <li><a class="dropdown-item" href="#">美術遊戲</a></li>
+            </ul>
+          </li>
+
+          <!-- 5. 教職專區 -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              aria-expanded="false"
+            >
+              教職專區<br /><span style="font-size: 0.75em; color: #666"
+                >TEACHING AREA</span
+              >
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="KindergartenRecruitment.html"
+                  >人才招募</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenTeacherCulture.html"
+                  >教育職責/職場進修文化</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- 6. 年度盛事 -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              aria-expanded="false"
+            >
+              年度盛事<br /><span style="font-size: 0.75em; color: #666"
+                >YEAR EVENT</span
+              >
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="KindergartenAnnualEvents.html"
+                  >年度盛事</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- 7. 入學申請 -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              aria-expanded="false"
+            >
+              入學申請<br /><span style="font-size: 0.75em; color: #666"
+                >ADMISSION</span
+              >
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="KindergartenAdmissionInfo.html"
+                  >入學資訊</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- 8. 作息時間 -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              aria-expanded="false"
+            >
+              作息時間<br /><span style="font-size: 0.75em; color: #666"
+                >SCHEDULE</span
+              >
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="KindergartenSeniorSchedule.html"
+                  >大班每日作息表</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenJuniorSchedule.html"
+                  >中班每日作息表</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenSmallSchedule.html"
+                  >小班每日作息表</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="KindergartenToddlerSchedule.html"
+                  >幼幼班每日作息表</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Header 互動邏輯
+  (function () {
+    // 取得 Bootstrap Collapse 實例
+    const navbarCollapse = document.getElementById("kindergartenMenu");
+    let bsCollapse;
+    try {
+      bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+    } catch (e) {
+      // Bootstrap 可能尚未載入，忽略錯誤
+    }
+
+    // 手機版下拉選單點擊處理
+    const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+    dropdownToggles.forEach((toggle) => {
+      toggle.addEventListener("click", function (e) {
+        if (window.innerWidth < 992) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const parent = this.closest(".dropdown");
+          const menu = parent.querySelector(".dropdown-menu");
+
+          // 關閉其他已開啟的選單
+          document
+            .querySelectorAll(".dropdown-menu.show")
+            .forEach((openMenu) => {
+              if (openMenu !== menu) {
+                openMenu.classList.remove("show");
+              }
+            });
+
+          // 切換當前選單
+          if (menu.classList.contains("show")) {
+            menu.classList.remove("show");
+          } else {
+            menu.classList.add("show");
+          }
+        } else {
+          // 桌面版：點擊可跳轉
+          const href = this.getAttribute("href");
+          if (href && href !== "#") {
+            window.location.href = href;
+          }
+        }
+      });
+    });
+
+    // 點擊連結後自動收合選單
+    const navLinks = document.querySelectorAll(
+      ".dropdown-item, .nav-link:not(.dropdown-toggle)"
+    );
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 992) {
+          if (bsCollapse) bsCollapse.hide();
+          document.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
+            menu.classList.remove("show");
+          });
+        }
+      });
+    });
+
+    // 捲動陰影
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      if (navbar) {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      }
+    });
+  })();
+</script>
