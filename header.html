@@ -1,0 +1,77 @@
+<!-- 
+  這是導覽列的獨立檔案 (Fragment)
+  Logo 已放大，並優化排版與路徑以配合首頁
+-->
+<header class="sticky-top">
+  <!-- 加上 shadow-sm 增加層次感，背景透白 -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <!-- Logo 區塊 -->
+      <a class="navbar-brand py-0" href="index.html">
+        <!-- 圖片路徑設為 ./image/ 確保在首頁顯示正常 -->
+        <img
+          src="./image/logo.jpg"
+          alt="JOY Montessori"
+          class="d-inline-block align-middle"
+        />
+        <div class="brand-text ms-3">
+          <span class="d-block fw-bold text-primary"
+            >JOY Montessori Educating Center</span
+          >
+          <span class="d-block text-secondary"
+            >JOY 誠 悅 蒙特梭利兒童教育機構</span
+          >
+        </div>
+      </a>
+
+      <!-- 漢堡選單按鈕 -->
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMenu"
+        style="color: var(--brand-blue)"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- 選單連結 -->
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <!-- 路徑統一修正為 ./ 開頭，確保在首頁點擊正常 -->
+          <li class="nav-item">
+            <a class="nav-link" href="./Kindergarten/KindergartenNew.html"
+              >幼兒園</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./ChildcareCenter.html">托育中心</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Foundation.html">基金會</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./OnlineResources.html">線上資源</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // --- Header 專屬邏輯 ---
+  // 讓當前頁面的連結顯示 active 狀態
+  const currentPath = window.location.pathname;
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    // 簡單判斷 href 是否存在於當前路徑中
+    const href = link.getAttribute("href");
+    if (
+      href &&
+      href !== "#" &&
+      currentPath.includes(href.replace("./", "").replace("../", ""))
+    ) {
+      link.classList.add("active");
+    }
+  });
+</script>
