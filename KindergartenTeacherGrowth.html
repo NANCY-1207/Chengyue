@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 理念．實踐．成長</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- [新增] 引入 Font Awesome 圖示庫 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 */
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      .page-title-wrapper {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .page-title {
+        color: var(--brand-blue);
+        font-weight: 700;
+        border-bottom: 3px solid var(--brand-orange);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+        letter-spacing: 2px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 80px 0;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .section-wrapper:hover {
+        transform: translateY(-3px);
+      }
+
+      /* 背景色設定 */
+      .bg-light-blue {
+        background-color: rgba(0, 129, 167, 0.08); /* 品牌藍淡色 */
+      }
+
+      .bg-light-orange {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      .bg-light-green {
+        background-color: rgba(0, 175, 185, 0.15); /* 品牌綠淡色 */
+      }
+
+      /* 文字樣式 */
+      .feature-subtitle {
+        color: var(--brand-green);
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-left: 35px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      .feature-subtitle::before {
+        content: "●";
+        color: var(--brand-orange);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+
+      .feature-text {
+        font-size: 1.15rem;
+        line-height: 2.2;
+        color: #444;
+        text-align: justify;
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight {
+        color: var(--brand-blue);
+        font-weight: 700;
+        background: linear-gradient(
+          120deg,
+          rgba(240, 153, 103, 0) 0%,
+          rgba(240, 153, 103, 0.3) 100%
+        );
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: 0 88%;
+        padding: 0 4px;
+        font-style: italic;
+      }
+
+      /* 圖片樣式 */
+      .growth-img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border: 5px solid #fff;
+      }
+
+      /* 純文字結語區塊 */
+      .text-only-quote {
+        background-color: rgba(0, 129, 167, 0.08); /* 淡藍色背景 */
+        padding: 80px 0;
+        border-radius: 30px 30px 0 0; /* 頂部圓角 */
+        margin-bottom: 0;
+        text-align: center;
+      }
+
+      .quote-icon {
+        font-size: 3rem;
+        color: var(--brand-blue);
+        opacity: 0.8;
+        margin-bottom: 30px;
+        display: block;
+      }
+
+      .quote-text {
+        font-size: 1.3rem;
+        line-height: 2.2;
+        font-weight: 300;
+        margin-bottom: 0;
+        font-style: italic;
+        letter-spacing: 1px;
+        color: #444;
+      }
+
+      .quote-highlight {
+        color: var(--brand-orange);
+        font-weight: 700;
+        border-bottom: 2px dashed rgba(240, 153, 103, 0.5);
+      }
+
+      @media (max-width: 768px) {
+        .growth-img {
+          height: 250px;
+        }
+        .quote-text {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 頁面標題區 -->
+    <div class="container page-title-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-md-start">
+          <h1 class="page-title">理念．實踐．成長 TEACHER GROWTH</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area container mb-0">
+      <!-- ========================================== -->
+      <!-- 1. 理念：以使命感出發 (淡藍底) -> 文字左，圖片右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-blue">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 文字在左 -->
+            <div class="col-lg-6">
+              <h2 class="feature-subtitle">理念：以使命感出發</h2>
+
+              <p class="feature-text">
+                教師的專業發展，是一場<span class="highlight">終身的修行</span
+                >。我們教導小朋友學習的同時，亦需不斷學習並成為更好的自己。
+              </p>
+
+              <p class="feature-text">
+                透過自主學習與進修，我們回應孩子成長的節奏，讓教育不只是傳授知識，更是一場理解、陪伴與尊重的旅程。
+              </p>
+            </div>
+
+            <!-- 圖片在右 -->
+            <div class="col-lg-6 text-center">
+              <img src="../image/理念.jpg" alt="理念" class="growth-img" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 2. 實踐：強調應用與轉化 (淡橘底) -> 圖片左，文字右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-orange">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 圖片在左 -->
+            <div class="col-lg-6 order-lg-1 text-center">
+              <img src="../image/實踐.jpg" alt="實踐" class="growth-img" />
+            </div>
+
+            <!-- 文字在右 -->
+            <div class="col-lg-6 order-lg-2">
+              <h2 class="feature-subtitle">實踐：強調應用與轉化</h2>
+
+              <p class="feature-text">
+                每一次的學習，都是為了回到教室能更溫柔、更有策略地面對每一位小朋友。教師的專業進修不只是知識的堆疊，更是教學實踐中一次次的調整與精進。
+              </p>
+
+              <p class="feature-text">
+                從理論走入現場，從反思走向轉化，讓教學更貼近小朋友們的需求。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- [修改] 3. 成長：強調教師也是學習者 (淡綠底) -> 恢復圖片 (文字左，圖片右) -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-green">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 文字在左 -->
+            <div class="col-lg-6">
+              <h2 class="feature-subtitle">成長：成為更好的自己</h2>
+
+              <p class="feature-text">
+                教師不是萬能的，但我們可以是持續成長的人。自主學習讓我們不斷在新的教育觀點中看見盲點，也在不確定中發現更多可能。
+              </p>
+
+              <p class="feature-text">
+                這份學習動力，源自於我們對小朋友的信念，也來自於對<span
+                  class="highlight"
+                  >「成為更好的自己」</span
+                >的渴望。
+              </p>
+            </div>
+
+            <!-- [新增] 圖片在右 -->
+            <div class="col-lg-6 text-center">
+              <img src="../image/成長.jpg" alt="成長" class="growth-img" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- [修改] 4. 結語 (改為純文字版面，淡藍底) -->
+    <section class="text-only-quote">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            <p class="quote-text">
+              「作為專業教育者，我們不只是傳遞知識的角色，<br />
+              更是引導小朋友探索、思考與成長的<span class="quote-highlight"
+                >同行者</span
+              >。<br />
+              <br />
+              專業進修是我們對這份角色的承擔，<br />
+              透過不斷學習與更新，讓我們能在多變的教育現場中，<br />
+              持續帶給小朋友們<span class="quote-highlight"
+                >穩定而有力量的陪伴</span
+              >。」
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              // Fallback
+              $("#divHeader").load("../header.html");
+            } else {
+              // 自動調整圖片與連結路徑
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                // Active 狀態
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            // 自動調整圖片路徑
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 中央廚房設備/行政管理中心</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- [新增] 引入 Font Awesome 圖示庫 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 */
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      .page-title-wrapper {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .page-title {
+        color: var(--brand-blue);
+        font-weight: 700;
+        border-bottom: 3px solid var(--brand-orange);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+        letter-spacing: 2px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 80px 0;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .section-wrapper:hover {
+        transform: translateY(-3px);
+      }
+
+      /* 背景色設定 */
+      .bg-light-blue {
+        background-color: rgba(0, 129, 167, 0.08); /* 品牌藍淡色 */
+      }
+
+      .bg-warm-egg {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      .bg-light-green {
+        background-color: rgba(0, 175, 185, 0.15); /* 品牌綠淡色 */
+      }
+
+      .bg-light-orange {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      .bg-light-gray {
+        background-color: #fff3e0; /* 淡灰色背景 (行政) */
+      }
+
+      /* [保留] 中間標題樣式 (原本的 section-header) */
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-header h2 {
+        color: var(--brand-blue); /* 改用變數統一顏色 */
+        font-weight: 700;
+        display: inline-block;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+        background-color: transparent; /* 讓背景透明，適應不同底色 */
+      }
+
+      /* 標題貫穿線 */
+      .section-header::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #ccc; /* 灰色線條 */
+        z-index: 0;
+        opacity: 0.5;
+      }
+
+      /* 文字樣式 */
+      .feature-subtitle {
+        color: var(--brand-green);
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-left: 35px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      .feature-subtitle::before {
+        content: "●";
+        color: var(--brand-orange);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+
+      .feature-text {
+        font-size: 1.15rem;
+        line-height: 2.2;
+        color: #444;
+        text-align: justify;
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight {
+        color: var(--brand-blue);
+        font-weight: 700;
+        background: linear-gradient(
+          120deg,
+          rgba(240, 153, 103, 0) 0%,
+          rgba(240, 153, 103, 0.3) 100%
+        );
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: 0 88%;
+        padding: 0 4px;
+        font-style: italic;
+      }
+
+      /* 圖片樣式 */
+      .admin-img {
+        width: 100%;
+        height: 350px;
+        object-fit: contain;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border: 5px solid #fff;
+        background-color: #fff;
+      }
+
+      /* 引用樣式 (專業照護) */
+      .quote-block {
+        border-left: 4px solid var(--brand-orange);
+        padding-left: 20px;
+        margin: 20px 0;
+        background: rgba(255, 255, 255, 0.6);
+        padding: 20px;
+        border-radius: 0 10px 10px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+      }
+
+      @media (max-width: 768px) {
+        .admin-img {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 頁面標題區 -->
+    <div class="container page-title-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-md-start">
+          <h1 class="page-title">中央廚房設備/行政管理中心 FACILITIES</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area container mb-5">
+      <!-- ========================================== -->
+      <!-- 1. 專業中央廚房設備 (淡藍底) -> 文字左，圖片右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-blue">
+        <div class="container">
+          <!-- [保留] 中間標題 -->
+          <div class="section-header">
+            <h2>專業中央廚房設備</h2>
+          </div>
+
+          <div class="row align-items-center g-5">
+            <!-- 文字在左 -->
+            <div class="col-lg-6">
+              <h3 class="feature-subtitle">
+                專業中央廚房設備：衛生、安全、高效能
+              </h3>
+
+              <p class="feature-text">
+                JOY誠悅的中央廚房配備高效節能的<span class="highlight"
+                  >LED燈具</span
+                >，提供充足且均勻的照明，確保烹飪和清潔工作的高效進行。
+              </p>
+              <p class="feature-text">
+                為了空氣流通，我們設置強力的排油煙系統，充分排除油煙與蒸氣。在衛生方面，採用<span
+                  class="highlight"
+                  >商用消毒櫃</span
+                >，讓每一件餐具都經過完全的消毒烘乾，符合嚴格衛生標準。
+              </p>
+              <p class="feature-text">
+                此外，廚房備有多台冷藏和冷凍設備，溫控系統穩定，確保肉類、海鮮、蔬果等易腐食材的新鮮與安全。
+              </p>
+            </div>
+
+            <!-- 圖片在右 -->
+            <div class="col-lg-6 text-center">
+              <img
+                src="../image/中央廚房設備.jpg"
+                alt="中央廚房"
+                class="admin-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 2. 行政管理中心 (淡灰底) -> 圖片左，文字右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-gray">
+        <div class="container">
+          <!-- [保留] 中間標題 -->
+          <div class="section-header">
+            <h2>行政管理中心</h2>
+          </div>
+
+          <div class="row align-items-center g-5">
+            <!-- 圖片在左 -->
+            <div class="col-lg-6 order-lg-1 text-center">
+              <img
+                src="../image/行政管理中心.jpg"
+                alt="行政中心"
+                class="admin-img"
+              />
+            </div>
+
+            <!-- 文字在右 -->
+            <div class="col-lg-6 order-lg-2">
+              <h3 class="feature-subtitle">
+                行政管理中心：智能化管理與專業照護
+              </h3>
+
+              <p class="feature-text">
+                行政管理中心設有接待區、辦公區與會議室，配備現代化辦公設施與<span
+                  class="highlight"
+                  >智能化管理系統</span
+                >（如財務軟體、考勤系統、家長聯絡平台），致力於提高工作效率與服務質量。
+              </p>
+
+              <div class="quote-block mt-4">
+                <h5
+                  style="
+                    color: var(--brand-blue);
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                  "
+                >
+                  <i class="fa-solid fa-user-nurse me-2"></i>專業健康照護
+                </h5>
+                <p class="mb-0 feature-text" style="font-size: 1rem">
+                  JOY誠悅設有保健室，備有基本醫療設施與藥品。我們聘請<span
+                    class="highlight"
+                    >專業護理人員</span
+                  >，專門負責幼兒的健康監控與管理，範圍涵蓋日常體檢、疾病防治以及突發健康事件的處理，為孩子的健康把關。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              // Fallback
+              $("#divHeader").load("../header.html");
+            } else {
+              // 自動調整圖片與連結路徑
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                // Active 狀態
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            // 自動調整圖片路徑
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

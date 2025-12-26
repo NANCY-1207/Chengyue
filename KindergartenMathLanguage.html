@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 算術邏輯教育/語文建構學習</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+    <!-- 4. 幼兒園專用樣式 (保留) -->
+    <link rel="stylesheet" href="../css/Kindergarten.css" />
+
+    <style>
+      /* 本頁專屬樣式 - 保留舊顏色 */
+
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      .page-title-wrapper {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .page-title {
+        color: #003366; /* 舊版深藍 */
+        font-weight: 700;
+        border-bottom: 3px solid #ff6600; /* 舊版橘色 */
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 60px 0;
+        margin-bottom: 30px;
+        border-radius: 20px;
+      }
+
+      /* 背景色 (保留舊版) */
+      .bg-light-purple {
+        background-color: #f3e5f5; /* 淡紫色 (算術) */
+      }
+
+      .bg-light-yellow {
+        background-color: #fff9c4; /* 淡黃色 (語文) */
+      }
+
+      /* [還原] 區塊標題樣式 */
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-header h2 {
+        color: #003366;
+        font-weight: 700;
+        display: inline-block;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+        /* 設定背景色以遮擋貫穿線 (需配合區塊背景色，或設為透明讓線穿過) */
+        /* 這裡設為 inherit 繼承父層背景，或是透明 */
+        background-color: transparent;
+      }
+
+      .section-header::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #ccc;
+        z-index: 0;
+        opacity: 0.5;
+      }
+
+      /* 副標題樣式 (保留舊版) */
+      .feature-subtitle {
+        color: #1d7a57; /* 舊版深綠 */
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .feature-subtitle::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 24px;
+        background-color: #ff6600; /* 舊版橘色 */
+        margin-right: 15px;
+        border-radius: 2px;
+      }
+
+      .feature-text {
+        font-size: 1.15rem;
+        line-height: 2;
+        color: #555;
+        text-align: justify;
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight {
+        color: #ff6600; /* 舊版橘色 */
+        font-weight: 600;
+      }
+
+      /* 算術教具列表樣式 (保留舊版) */
+      .math-tool-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 15px;
+      }
+      .math-tool-item {
+        margin-bottom: 15px;
+        padding-left: 25px;
+        position: relative;
+        font-weight: 500;
+        color: #003366; /* 舊版深藍 */
+        line-height: 1.8;
+      }
+      .math-tool-item::before {
+        content: "•";
+        color: #ff6600; /* 舊版橘色 */
+        position: absolute;
+        left: 5px;
+        font-size: 1.5rem;
+        line-height: 1rem;
+        top: 8px;
+      }
+      .math-tool-item strong {
+        color: #d84315; /* 強調色 */
+        font-size: 1.1rem;
+      }
+
+      /* 圖片樣式 (統一規格，加上白底與圓角) */
+      .course-img {
+        width: 100%;
+        height: 350px; /* 固定高度 */
+        object-fit: contain; /* 完整顯示 */
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 4px solid #fff;
+        background-color: #fff;
+      }
+
+      /* 響應式調整 */
+      @media (max-width: 768px) {
+        .course-img {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 頁面標題區 -->
+    <div class="container page-title-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-md-start">
+          <h1 class="page-title">算術邏輯教育 / 語文建構學習</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area container mb-5">
+      <!-- ========================================== -->
+      <!-- 1. 算術邏輯教育 (淡紫底) -> 圖片在右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-purple">
+        <div class="container">
+          <!-- [還原] 區塊標題 -->
+          <div class="section-header">
+            <h2>算術邏輯教育</h2>
+          </div>
+
+          <div class="row align-items-center g-5">
+            <!-- 文字區塊 (左) -->
+            <div class="col-lg-6">
+              <h3 class="feature-subtitle">打開蒙特梭利（算數教育）的潘朵拉</h3>
+              <p class="feature-text">
+                打破傳統數學教育僅存在抽象數字給孩子理解的模式，蒙特梭利算數教育是從<span
+                  class="highlight"
+                  >「量」</span
+                >出發。
+              </p>
+
+              <ul class="math-tool-list">
+                <li class="math-tool-item">
+                  <strong>基礎長棒：</strong>
+                  透過比較「長的~最長的」與「短的~最短的」，讓孩子在操作中理解形體的量體長短比較。
+                </li>
+                <li class="math-tool-item">
+                  <strong>延伸數棒：</strong>
+                  數量最長的為 10，最短的為
+                  1。形體與長棒相同，但以紅藍相間隔，加入 1~10
+                  的數字卡，進而建構出<span class="highlight"
+                    >（數）與（量）的結合</span
+                  >。
+                </li>
+              </ul>
+            </div>
+
+            <!-- 圖片區塊 (右) -->
+            <div class="col-lg-6 text-center">
+              <!-- [修改] 使用新上傳的圖片 1 -->
+              <img
+                src="../image/算術邏輯教育.jpg"
+                alt="算術教育"
+                class="course-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 2. 語文建構學習 (淡黃底) -> 圖片在左 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-yellow">
+        <div class="container">
+          <!-- [還原] 區塊標題 -->
+          <div class="section-header">
+            <h2>語文建構學習</h2>
+          </div>
+
+          <div class="row align-items-center g-5">
+            <!-- 圖片區塊 (左：使用 order-lg-1 確保桌面版在左) -->
+            <div class="col-lg-6 order-lg-1 text-center">
+              <!-- [修改] 使用新上傳的圖片 2 -->
+              <img
+                src="../image/語文建構學習.jpg"
+                alt="語文學習"
+                class="course-img"
+              />
+            </div>
+
+            <!-- 文字區塊 (右：使用 order-lg-2) -->
+            <div class="col-lg-6 order-lg-2">
+              <h3 class="feature-subtitle">蒙特梭利（語文）教育</h3>
+              <p class="feature-text">
+                蒙特梭利語文教育是一套完整的系統，涵蓋聽、說、讀、寫。在 0-6
+                歲階段，重點放在<span class="highlight"
+                  >「幫助小朋友建構人格」</span
+                >，而非機械性背誦。
+              </p>
+
+              <p class="feature-text">
+                雖然書寫敏感期約在五歲後爆發，但透過日常生活的<span
+                  class="highlight"
+                  >手眼協調訓練</span
+                >及感官練習（聽覺、觸覺、視覺），小朋友已具備讀寫基礎。
+              </p>
+
+              <p class="feature-text">
+                此時加上獨特的語言教具——<strong style="color: #003366"
+                  >幾何嵌圖板、砂字字母板、圖字卡</strong
+                >的操作，小朋友即能自然習得書寫和閱讀的能力。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header (使用幼兒園專用 Header)
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              console.log(
+                "Error loading Kindergartenheader.html: " +
+                  xhr.status +
+                  " " +
+                  xhr.statusText
+              );
+              // Fallback
+              $("#divHeader").load("../header.html");
+            } else {
+              // 自動調整圖片與連結路徑
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            // 自動調整圖片路徑
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src && src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

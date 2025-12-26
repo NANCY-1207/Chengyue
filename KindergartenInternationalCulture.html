@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 國際文化培育</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 - 保留舊顏色 */
+
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 60px 0;
+        margin-bottom: 30px;
+        border-radius: 20px;
+      }
+
+      /* 背景色 (保留舊版) */
+      .bg-light-orange {
+        background-color: #fff3e0; /* 淡粉橘 */
+      }
+
+      .bg-light-green {
+        background-color: #e8f5e9; /* 淡綠色 */
+      }
+
+      /* 區塊標題樣式 (還原) */
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-header h2 {
+        color: #003366; /* 舊版深藍 */
+        font-weight: 700;
+        display: inline-block;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+        background-color: transparent;
+      }
+
+      .section-header::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #ccc;
+        z-index: 0;
+        opacity: 0.5;
+      }
+
+      /* 副標題樣式 (保留舊版) */
+      .feature-subtitle {
+        color: #1d7a57; /* 舊版深綠 */
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .feature-subtitle::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 24px;
+        background-color: #ff6600; /* 舊版橘色 */
+        margin-right: 15px;
+        border-radius: 2px;
+      }
+
+      .feature-text {
+        font-size: 1.15rem;
+        line-height: 2;
+        color: #555;
+        text-align: justify;
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight {
+        color: #ff6600; /* 舊版橘色 */
+        font-weight: 600;
+      }
+
+      /* 學科標籤列表 (保留舊版) */
+      .subject-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+      }
+      .subject-tag {
+        background: #fff;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.95rem;
+        color: #003366;
+        border: 1px solid #c8e6c9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      /* 圖片樣式 (統一規格) */
+      .course-img {
+        width: 100%;
+        height: 350px; /* 固定高度 */
+        object-fit: contain; /* 完整顯示 */
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 4px solid #fff;
+        background-color: #fff;
+      }
+
+      /* 響應式調整 */
+      @media (max-width: 768px) {
+        .course-img {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area container mb-5">
+      <!-- ========================================== -->
+      <!-- 1. 國際文化培育 (淡橘底) -> 圖片在右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-orange">
+        <div class="container">
+          <!-- 區塊標題 -->
+          <div class="section-header">
+            <h2>國際文化培育</h2>
+          </div>
+
+          <div class="row align-items-center g-5">
+            <!-- 文字區塊 (左) -->
+            <div class="col-lg-6">
+              <h3 class="feature-subtitle">豐富視野，探索世界</h3>
+              <p class="feature-text">
+                蒙氏最豐富的區域之一，包含了<span class="highlight"
+                  >歷史、自然、地理</span
+                >等各區的延伸教學。藉由實際的教學、圖片、拼圖等教具，帶領孩子認識七大洲及相關的文化資訊。
+              </p>
+
+              <p class="feature-text">
+                小朋友們在年齡更早的時候學習文化時，是透過某些<span
+                  class="highlight"
+                  >「帶有動作的活動」</span
+                >來吸取知識。我們提供關於地理、動植物、科學等活動，因為「要探險就必須充滿智能方面的興趣」，而這些正是我們要帶給小朋友的寶貴資產。
+              </p>
+            </div>
+
+            <!-- 圖片區塊 (右) -->
+            <div class="col-lg-6 text-center">
+              <!-- [修改] 使用對應的圖片 -->
+              <img
+                src="../image/豐富視野探索世界.jpg"
+                alt="文化教學"
+                class="course-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 2. 自然人文教育 (淡綠底) -> 圖片在左 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-green">
+        <div class="container">
+          <!-- 區塊標題 -->
+          <div class="section-header">
+            <h2>自然人文教育</h2>
+          </div>
+
+          <div class="row align-items-center g-5">
+            <!-- 圖片區塊 (左) -->
+            <div class="col-lg-6 order-lg-1 text-center">
+              <!-- [修改] 使用對應的圖片 -->
+              <img
+                src="../image/在地連結.jpg"
+                alt="自然人文"
+                class="course-img"
+              />
+            </div>
+
+            <!-- 文字區塊 (右) -->
+            <div class="col-lg-6 order-lg-2">
+              <h3 class="feature-subtitle">在地連結與全方位探索</h3>
+              <p class="feature-text">
+                從國際文化培育的角度而言，蒙氏所涵蓋的自然人文教育內容相當廣泛。這些教具的製作，大多是蒙特梭利教師根據各地不同的地理、人文環境而設計的，具有強烈的<span
+                  class="highlight"
+                  >本土化色彩</span
+                >。
+              </p>
+
+              <p class="feature-text mb-2">
+                我們的教育內容囊括了與人類生存環境有關的人、地、事、物等各種知識：
+              </p>
+
+              <div class="subject-tags">
+                <span class="subject-tag">🌲 自然教育</span>
+                <span class="subject-tag">📜 史地教育</span>
+                <span class="subject-tag">🎵 音樂教育</span>
+                <span class="subject-tag">🎨 美術教育</span>
+                <span class="subject-tag">🦁 動物學</span>
+                <span class="subject-tag">🌱 植物學</span>
+                <span class="subject-tag">🔭 天文學</span>
+                <span class="subject-tag">⛰️ 地質學</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              // Fallback
+              $("#divHeader").load("../header.html");
+            } else {
+              // 自動調整圖片與連結路徑
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                // 處理選單 Active 狀態
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            // 自動調整圖片路徑
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src && src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

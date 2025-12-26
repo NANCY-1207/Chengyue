@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 中班一日作息表</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 引入 Font Awesome 圖示庫 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 */
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      /* 頁面大標題區 */
+      .page-title-wrapper {
+        padding-top: 50px;
+        padding-bottom: 30px;
+        text-align: center;
+        background-color: #fffdf5;
+      }
+
+      .page-title {
+        color: var(--brand-blue);
+        font-weight: 800;
+        border-bottom: 4px solid var(--brand-orange);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        display: inline-block;
+        letter-spacing: 2px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      /* 主要背景：橘色主題 */
+      .main-schedule-section {
+        background-color: #fff3e0; /* 暖橘色背景 */
+        padding: 60px 0;
+        border-radius: 30px;
+        margin-bottom: 40px;
+      }
+
+      /* 作息項目容器 (兩欄式) */
+      .schedule-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(240, 153, 103, 0.15);
+        transition: transform 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .schedule-item:hover {
+        transform: scale(1.02);
+        border-color: var(--brand-orange);
+      }
+
+      /* 左側：時間欄位 */
+      .time-col {
+        background-color: #fff;
+        padding: 30px;
+        width: 200px;
+        flex-shrink: 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 2px dashed rgba(240, 153, 103, 0.2);
+      }
+
+      .time-text {
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: #000; /* 時間字體黑色 */
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+        line-height: 1.2;
+      }
+
+      /* 右側：內容欄位 */
+      .content-col {
+        padding: 25px 40px;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+      }
+
+      .activity-icon {
+        font-size: 2.5rem;
+        margin-right: 25px;
+        width: 60px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      /* 為不同活動設定不同顏色增加活潑感 */
+      .icon-orange {
+        color: #f09967;
+      }
+      .icon-green {
+        color: #8bc34a;
+      }
+      .icon-blue {
+        color: #0081a7;
+      }
+      .icon-red {
+        color: #ff5252;
+      }
+      .icon-purple {
+        color: #9c27b0;
+      }
+
+      .activity-text-box {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .activity-name {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--brand-blue);
+        margin-bottom: 5px;
+        line-height: 1.4;
+      }
+
+      .activity-note {
+        font-size: 0.95rem;
+        color: #666;
+        margin-bottom: 0;
+        font-weight: 500;
+      }
+
+      /* 底部標語 */
+      .schedule-footer-note {
+        text-align: center;
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        border: 2px dashed var(--brand-orange);
+        color: #444;
+        font-weight: 700;
+        margin-top: 40px;
+      }
+
+      /* 響應式調整：手機版改為上下排列 */
+      @media (max-width: 768px) {
+        .schedule-item {
+          flex-direction: column;
+          text-align: center;
+        }
+        .time-col {
+          width: 100%;
+          border-right: none;
+          border-bottom: 2px dashed rgba(240, 153, 103, 0.2);
+          padding: 15px;
+        }
+        .content-col {
+          flex-direction: column;
+          padding: 25px 20px;
+        }
+        .activity-icon {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+        .activity-name {
+          font-size: 1.15rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 頁面標題區 -->
+    <div class="page-title-wrapper">
+      <div class="container">
+        <h1 class="page-title">中班一日作息表</h1>
+      </div>
+    </div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area container mb-5">
+      <section class="main-schedule-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <!-- 08:00 - 08:30 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">08:00<br />-<br />08:30</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-orange">
+                    <i class="fa-solid fa-list-check"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">
+                      生活教育 / 物品整理 / 常規引導
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 08:30 - 09:00 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">08:30<br />-<br />09:00</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-green">
+                    <i class="fa-solid fa-cloud-sun"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">戶外活動 / 喝水 / 上廁所</h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 09:00 - 09:30 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">09:00<br />-<br />09:30</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-red">
+                    <i class="fa-solid fa-cookie-bite"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">美味點心</h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 09:30 - 10:30 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">09:30<br />-<br />10:30</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-blue">
+                    <i class="fa-solid fa-shapes"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">主題活動 / 蒙特梭利學習區活動</h3>
+                    <p class="activity-note">( 團體、小組 )</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 10:30 - 11:00 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">10:30<br />-<br />11:00</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-green">
+                    <i class="fa-solid fa-person-running"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">大肌肉活動</h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 11:00 - 11:30 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">11:00<br />-<br />11:30</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-blue">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">主題活動 / 蒙特梭利學習區活動</h3>
+                    <p class="activity-note">( 個別 )</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 11:30 - 12:30 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">11:30<br />-<br />12:30</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-orange">
+                    <i class="fa-solid fa-utensils"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">營養午餐 / 整理環境 / 潔牙</h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 12:30 - 14:00 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">12:30<br />-<br />14:00</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-blue">
+                    <i class="fa-solid fa-bed"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">甜蜜夢鄉</h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 14:00 - 14:20 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">14:00<br />-<br />14:20</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-purple">
+                    <i class="fa-solid fa-shirt"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">
+                      上廁所 / 喝水 / 起床摺被 / 整理服裝儀容
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 14:20 - 15:20 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">14:20<br />-<br />15:20</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-green">
+                    <i class="fa-solid fa-earth-asia"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">多元文化教學活動</h3>
+                    <p class="activity-note">( 操作學習區、全班共讀、律動 )</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 15:20 - 15:50 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">15:20<br />-<br />15:50</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-red">
+                    <i class="fa-solid fa-apple-whole"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">活力點心 / 環境整理</h3>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 15:50 - 16:30 -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">15:50<br />-<br />16:30</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-orange">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">愛的叮嚀 / 快樂歸賦</h3>
+                    <p class="activity-note">
+                      提醒與檢查幼兒身體 / 衣褲 / 物品 / 學習單
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 16:30 ~ -->
+              <div class="schedule-item">
+                <div class="time-col">
+                  <span class="time-text">16:30<br />~</span>
+                </div>
+                <div class="content-col">
+                  <div class="activity-icon icon-blue">
+                    <i class="fa-solid fa-house-user"></i>
+                  </div>
+                  <div class="activity-text-box">
+                    <h3 class="activity-name">課後留園</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 底部彈性調整備註 -->
+          <div class="schedule-footer-note">
+            <i class="fa-solid fa-circle-info me-2 text-orange"></i>
+            作息時間安排視各班班級教學與全園活動內容彈性調整。
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              $("#divHeader").load("../header.html");
+            } else {
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

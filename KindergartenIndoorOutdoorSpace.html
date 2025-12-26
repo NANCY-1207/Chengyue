@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 自在室內戶外遊戲空間/多元活動場域</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- [新增] 引入 Font Awesome 圖示庫 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 */
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 80px 0;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .section-wrapper:hover {
+        transform: translateY(-3px);
+      }
+
+      /* 背景色設定 */
+      .bg-light-blue {
+        background-color: rgba(0, 129, 167, 0.08); /* 品牌藍淡色 */
+      }
+
+      .bg-warm-egg {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      .bg-light-green {
+        background-color: rgba(0, 175, 185, 0.15); /* 品牌綠淡色 */
+      }
+
+      .bg-light-orange {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      /* 區塊標題 (選擇性使用，若不需要可移除) */
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      .section-header h2 {
+        color: var(--brand-blue);
+        font-weight: 700;
+        display: inline-block;
+        border-bottom: 3px solid var(--brand-orange);
+        padding-bottom: 10px;
+      }
+
+      /* 文字樣式 */
+      .feature-subtitle {
+        color: var(--brand-green);
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-left: 35px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      .feature-subtitle::before {
+        content: "●";
+        color: var(--brand-orange);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+
+      .feature-text {
+        font-size: 1.15rem;
+        line-height: 2.2;
+        color: #444;
+        text-align: justify;
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight {
+        color: var(--brand-blue);
+        font-weight: 700;
+        background: linear-gradient(
+          120deg,
+          rgba(240, 153, 103, 0) 0%,
+          rgba(240, 153, 103, 0.3) 100%
+        );
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: 0 88%;
+        padding: 0 4px;
+        font-style: italic;
+      }
+
+      /* 圖片樣式 */
+      .space-img {
+        width: 100%;
+        height: 350px;
+        object-fit: contain; /* 完整顯示圖片 */
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border: 5px solid #fff;
+        background-color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        .space-img {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 主要內容區 (移除頁面大標題，直接開始) -->
+    <main class="content-area container mb-0">
+      <!-- ========================================== -->
+      <!-- 1. 室內 - 活力賽車區 (淡藍底) -> 文字左，圖片右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-blue">
+        <div class="container">
+          <div class="section-header">
+            <h2>自在室內戶外遊戲空間</h2>
+          </div>
+          <div class="row align-items-center g-5">
+            <!-- 文字在左 -->
+            <div class="col-lg-6">
+              <h3 class="feature-subtitle">室內 - 活力賽車區</h3>
+              <p class="feature-text">
+                JOY誠悅以開放式設計為主，<span class="highlight">賽車區</span
+                >是小朋友們釋放精力、安全又富有趣味性的遊戲空間。
+              </p>
+              <p class="feature-text">
+                這裡設有各式各樣的大小車子，可根據孩子的年齡和能力進行選擇，保證遊戲的多樣性和挑戰性。讓小朋友們在扮演賽車手的過程中，體驗競爭、挑戰和團隊合作的樂趣。
+              </p>
+            </div>
+
+            <!-- 圖片在右 -->
+            <div class="col-lg-6 text-center">
+              <img
+                src="../image/活力賽車區.jpeg"
+                alt="室內賽車區"
+                class="space-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 2. 戶外 - 與自然和諧共處 (淡橘底) -> 圖片左，文字右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-orange">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 圖片在左 -->
+            <div class="col-lg-6 order-lg-1 text-center">
+              <img
+                src="../image/與自然和諧共處.jpg"
+                alt="戶外遊戲區"
+                class="space-img"
+              />
+            </div>
+
+            <!-- 文字在右 -->
+            <div class="col-lg-6 order-lg-2">
+              <h3 class="feature-subtitle">戶外 - 與自然和諧共處</h3>
+              <p class="feature-text">
+                JOY誠悅戶外遊戲區的設計特別強調<span class="highlight"
+                  >與大自然的和諧共處</span
+                >，創建了一個不僅具挑戰性，且富有教育意義的遊戲環境。
+              </p>
+              <p class="feature-text">
+                我們設有複合式滑梯、攀爬架、滑步車等設施，幫助孩子磨練自我控制與平衡感。地面採用環保無毒地墊確保安全。周邊被精心規劃的大型植物環繞，讓孩子學習照顧植物、觀察昆蟲，體驗季節變化，是發展生態意識的寶貴資源。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 3. 靜謐的故事角與閱讀區 (淡綠底) -> 文字左，圖片右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-green">
+        <div class="container">
+          <div class="section-header">
+            <h2>寬敞室內多元活動場域</h2>
+          </div>
+
+          <div class="row align-items-center g-5">
+            <!-- 文字在左 -->
+            <div class="col-lg-6">
+              <h3 class="feature-subtitle">靜謐的故事角與閱讀區</h3>
+              <p class="feature-text">
+                這裡提供了一個靜謐的空間，適合小朋友們安靜地閱讀繪本、進行角色扮演。
+              </p>
+              <p class="feature-text">
+                透過與同伴的語言交流，孩子們能在這裡發展語言能力和社會情感，享受閱讀帶來的樂趣與想像空間。
+              </p>
+            </div>
+
+            <!-- 圖片在右 -->
+            <div class="col-lg-6 text-center">
+              <img
+                src="../image/靜謐的故事角與閱讀區.jpg"
+                alt="閱讀區"
+                class="space-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 4. 早晨時光：活力晨操 (淡藍底) -> 圖片左，文字右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-blue">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 圖片在左 -->
+            <div class="col-lg-6 order-lg-1 text-center">
+              <img
+                src="../image/活力晨操.jpg"
+                alt="晨操時光"
+                class="space-img"
+              />
+            </div>
+
+            <!-- 文字在右 -->
+            <div class="col-lg-6 order-lg-2">
+              <h3 class="feature-subtitle">早晨時光：活力晨操</h3>
+              <p class="feature-text">
+                早上會安排老師帶著小朋友們做晨操，通過簡單的大肌肉活動來喚醒身體、促進血液循環。
+              </p>
+              <p class="feature-text">
+                從另一個角度而言，晨操的目的是增強小朋友們的運動能力、協調性和靈活性，同時也是一個促進集體合作和社交的好機會，為一天的學習做好準備。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 5. 下午時段：音樂故事 (淡橘底) -> 文字左，圖片右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-orange">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 文字在左 -->
+            <div class="col-lg-6">
+              <h3 class="feature-subtitle">下午時段：音樂故事</h3>
+              <p class="feature-text">
+                下午會有專門的故事時間，老師將故事和音樂結合，通過音樂背景或聲效來增強故事情感的表達。
+              </p>
+              <p class="feature-text">
+                小朋友們可以邊聽邊參與，例如跟著音樂一起做動作、模仿故事中的角色或發出相應的聲音，這樣不僅能增強他們的理解力，還能促進語言和社交能力的發展。
+              </p>
+            </div>
+
+            <!-- 圖片在右 -->
+            <div class="col-lg-6 text-center">
+              <img
+                src="../image/音樂故事.jpg"
+                alt="音樂故事"
+                class="space-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              // Fallback
+              $("#divHeader").load("../header.html");
+            } else {
+              // 自動調整圖片與連結路徑
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                // Active 狀態
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            // 自動調整圖片路徑
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

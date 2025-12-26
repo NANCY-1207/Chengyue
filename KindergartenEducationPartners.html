@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 教育夥伴</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- [新增] 引入 Font Awesome 圖示庫 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 */
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      .page-title-wrapper {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .page-title {
+        color: var(--brand-blue);
+        font-weight: 700;
+        border-bottom: 3px solid var(--brand-orange);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+        letter-spacing: 2px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 80px 0;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .section-wrapper:hover {
+        transform: translateY(-3px);
+      }
+
+      /* 背景色設定 */
+      .bg-light-blue {
+        background-color: rgba(0, 129, 167, 0.08); /* 品牌藍淡色 */
+      }
+
+      .bg-warm-egg {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      .bg-light-green {
+        background-color: rgba(0, 175, 185, 0.15); /* 品牌綠淡色 */
+      }
+
+      .bg-light-orange {
+        background-color: #fff3e0; /* 品牌橘淡色 */
+      }
+
+      /* 文字樣式 */
+      .feature-subtitle {
+        color: var(--brand-green);
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-left: 35px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      .feature-subtitle::before {
+        content: "●";
+        color: var(--brand-orange);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+
+      .feature-text {
+        font-size: 1.15rem;
+        line-height: 2.2;
+        color: #444;
+        text-align: justify;
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight {
+        color: var(--brand-blue);
+        font-weight: 700;
+        background: linear-gradient(
+          120deg,
+          rgba(240, 153, 103, 0) 0%,
+          rgba(240, 153, 103, 0.3) 100%
+        );
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: 0 88%;
+        padding: 0 4px;
+        font-style: italic;
+      }
+
+      /* 圖片樣式 */
+      .partner-img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover; /* 人物照片適合用 cover */
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border: 5px solid #fff;
+      }
+
+      /* 引言區塊 (結語) - 淡綠底、左文右圖 */
+      .quote-section-new {
+        background-color: rgba(0, 175, 185, 0.08); /* 品牌綠淡色 */
+        padding: 80px 0;
+        border-radius: 20px;
+        margin-bottom: 30px;
+      }
+
+      .quote-icon {
+        font-size: 3rem;
+        color: var(--brand-green);
+        opacity: 0.8;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .quote-text {
+        font-size: 1.2rem;
+        line-height: 2.2;
+        font-weight: 400;
+        margin-bottom: 0;
+        font-style: italic;
+        letter-spacing: 1px;
+        color: #444; /* 深色文字 */
+      }
+
+      .quote-highlight {
+        color: var(--brand-blue); /* 品牌藍強調色 */
+        font-weight: 700;
+        border-bottom: 2px dashed var(--brand-orange);
+      }
+
+      @media (max-width: 768px) {
+        .partner-img {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 頁面標題區 -->
+    <div class="container page-title-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-md-start">
+          <h1 class="page-title">誠悅教育夥伴 PARTNERS</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area container mb-5">
+      <!-- ========================================== -->
+      <!-- 1. 教職夥伴專業進修 (淡藍底) -> 純文字版面 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-blue">
+        <div class="container">
+          <div class="row justify-content-center">
+            <!-- 文字置中 (col-lg-10) -->
+            <div class="col-lg-10">
+              <h2 class="feature-subtitle text-center" style="padding-left: 0">
+                教職夥伴專業進修
+              </h2>
+              <!-- 移除標題前的圓點 (因為已置中) -->
+              <style>
+                .text-center.feature-subtitle::before {
+                  content: none;
+                }
+              </style>
+
+              <p class="feature-text">
+                教師的專業成長，不只是制度要求，更是一種對教育的熱情與責任感。誠悅夥伴每一年<span
+                  class="highlight"
+                  >自動自發幼教專業研習 40 小時</span
+                >，並運用無數的假日不斷的進修再精進，就是希望做到心中對幼教的信念，與對孩子的承諾。
+              </p>
+
+              <p class="feature-text">
+                自主學習意味著老師主動發現自身在教學上的需求與挑戰，並積極尋求資源來提升教學品質。這不僅包括參與研習、進修課程、教學觀摩與專業對話，也包含在日常教學反思中挖掘改變的動力。
+              </p>
+
+              <p class="feature-text">
+                而專業進修更是一項<span class="highlight">終身學習的態度</span
+                >。教師透過持續學習新知，如兒童心理、教育哲學、多元文化、情緒引導、教室經營策略等，不僅更新教學視野，也深化了對孩子成長的理解。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 2. 蒙特梭利教師 (改淺橘色底) -> 圖片左，文字右 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper bg-light-orange">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 圖片在左 -->
+            <div class="col-lg-6 order-lg-1 text-center">
+              <img
+                src="../image/孩子的引導者.jpg"
+                alt="引導者"
+                class="partner-img"
+              />
+            </div>
+
+            <!-- 文字在右 -->
+            <div class="col-lg-6 order-lg-2">
+              <h2 class="feature-subtitle">蒙特梭利教師 - 孩子的引導者</h2>
+
+              <p class="feature-text">
+                在蒙特梭利的脈絡中，教師被視為<span class="highlight"
+                  >「引導者」</span
+                >，更需要擁有覺察自我、觀察小朋友、設計適性教學的能力。
+              </p>
+
+              <p class="feature-text">
+                因此，專業進修不只是知識的累積，更是<span class="highlight"
+                  >心靈層次的鍛鍊</span
+                >與教育信念的重建。透過不斷的自我反思與專業對話，我們學習如何更細膩地觀察孩子的需求，並提供最適切的支持，讓孩子在自由與秩序中茁壯成長。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- 3. 承諾與結語 (淡綠色底) -> 左文右圖 -->
+      <!-- ========================================== -->
+      <section class="section-wrapper quote-section-new">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 文字在左 -->
+            <div class="col-lg-6 order-lg-1">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p class="quote-text">
+                「身為教師，我們的學習從不止步。<br />
+                專業進修不是負擔，而是一種對孩子的承諾；<br />
+                自主學習不是形式，而是一種不斷回到教育初衷的旅程。<br />
+                <br />
+                在每一次進修中，我們不只是在學習如何教，<br />
+                更是在學習<span class="quote-highlight"
+                  >如何成為孩子生命中的重要陪伴者</span
+                >。」
+              </p>
+            </div>
+
+            <!-- 圖片在右 -->
+            <div class="col-lg-6 order-lg-2 text-center">
+              <!-- [修改] 替換為實際圖片 -->
+              <img
+                src="../image/孩子生命中的重要陪伴者.jpg"
+                alt="孩子生命中的重要陪伴者"
+                class="partner-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              // Fallback
+              $("#divHeader").load("../header.html");
+            } else {
+              // 自動調整圖片與連結路徑
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                // Active 狀態
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            // 自動調整圖片路徑
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

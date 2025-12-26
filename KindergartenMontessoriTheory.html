@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 教育理論</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Quicksand:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 3. 引入主樣式表 -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 */
+      .content-area {
+        padding-top: 0;
+        padding-bottom: 0;
+        min-height: 600px;
+      }
+
+      .page-title-wrapper {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      .page-title {
+        color: var(--brand-blue);
+        font-weight: 800;
+        border-bottom: 3px solid var(--brand-orange);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+        letter-spacing: 2px;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      /* 區塊包裝 */
+      .section-wrapper {
+        padding: 60px 0;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .section-wrapper:hover {
+        transform: translateY(-3px);
+      }
+
+      .bg-light-blue {
+        background-color: rgba(0, 129, 167, 0.08);
+      }
+
+      .bg-warm-card {
+        background-color: #fffef0;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        border: 2px dashed rgba(240, 153, 103, 0.3);
+      }
+
+      /* 移除原本的 text-container 限制，改直接用 container */
+
+      /* 圖片樣式 */
+      .theory-img {
+        width: 100%;
+        height: 350px; /* 固定高度，確保版面整齊 */
+        object-fit: contain; /* [修改] 改為 contain，完整顯示圖片不裁切 */
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border: 4px solid #fff;
+        background-color: #fff; /* [新增] 加上白底，避免圖片比例不同時出現空隙 */
+      }
+
+      /* 響應式調整：手機版圖片高度可以小一點 */
+      @media (max-width: 768px) {
+        .theory-img {
+          height: 250px;
+        }
+      }
+
+      .feature-subtitle {
+        color: var(--brand-green);
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 1.8rem;
+        position: relative;
+        padding-left: 35px;
+        border-left: none;
+        font-family: "Quicksand", "Noto Sans TC", sans-serif;
+      }
+
+      .feature-subtitle::before {
+        content: "●";
+        color: var(--brand-orange);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+
+      .feature-text {
+        font-size: 1.15rem;
+        line-height: 2;
+        color: #444;
+        text-align: justify;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+      }
+
+      .highlight {
+        color: var(--brand-blue);
+        font-weight: 700;
+        background: linear-gradient(
+          120deg,
+          rgba(240, 153, 103, 0) 0%,
+          rgba(240, 153, 103, 0.3) 100%
+        );
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: 0 88%;
+        padding: 0 4px;
+        font-style: italic;
+      }
+
+      /* 感官圖示列表 */
+      .senses-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 25px;
+        justify-content: flex-start;
+      }
+      .sense-item {
+        background: #fff;
+        padding: 8px 20px;
+        border-radius: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        color: var(--brand-green);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        border: 2px solid var(--brand-green);
+        transition: all 0.2s;
+        cursor: pointer;
+        font-size: 0.95rem;
+      }
+      .sense-item:hover {
+        transform: scale(1.1) rotate(-3deg);
+        background-color: var(--brand-green);
+        color: #fff;
+        box-shadow: 0 6px 15px rgba(0, 175, 185, 0.3);
+      }
+      .sense-icon {
+        margin-right: 8px;
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 頁面標題區 -->
+    <div class="container page-title-wrapper">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-md-start">
+          <h1 class="page-title">蒙特梭利教育理論 THEORY</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要內容區 -->
+    <main class="content-area container mb-5">
+      <!-- 1. 敏感期與五感探索 (淡藍底) -> 圖片在右 -->
+      <section class="section-wrapper bg-light-blue">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 文字區塊 (左) -->
+            <div class="col-lg-6">
+              <h2 class="feature-subtitle">跟隨孩子，啟航探索與學習</h2>
+              <p class="feature-text">
+                蒙特梭利環境的預備，是為了跟隨小朋友們的發展步伐。
+              </p>
+              <p class="feature-text">
+                小朋友們在嬰幼兒時期，透過本能來感受世界。0-6 歲的幼兒處於<span
+                  class="highlight"
+                  >探索的敏感期</span
+                >，對這個世界充滿好奇心，對週圍的人事物都充滿探索的期待。
+              </p>
+              <div class="senses-list">
+                <div class="sense-item">
+                  <span class="sense-icon">👁️</span>視覺
+                </div>
+                <div class="sense-item">
+                  <span class="sense-icon">👂</span>聽覺
+                </div>
+                <div class="sense-item">
+                  <span class="sense-icon">👃</span>嗅覺
+                </div>
+                <div class="sense-item">
+                  <span class="sense-icon">👅</span>味覺
+                </div>
+                <div class="sense-item">
+                  <span class="sense-icon">✋</span>觸覺
+                </div>
+              </div>
+            </div>
+            <!-- 圖片區塊 (右) -->
+            <div class="col-lg-6 text-center">
+              <img
+                src="../image/蒙特梭利教育理論-跟隨孩子.jpg"
+                alt="跟隨孩子"
+                class="theory-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 教具的吸引力與自信 (暖色卡片) -> 圖片在左 -->
+      <section class="section-wrapper bg-warm-card">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 圖片區塊 (左：使用 order-lg-1 確保桌面版在左，文字在右) -->
+            <div class="col-lg-6 order-lg-1 text-center">
+              <img
+                src="../image/蒙特梭利教育理論-自信表達.jpg"
+                alt="自信表達"
+                class="theory-img"
+              />
+            </div>
+            <!-- 文字區塊 (右：使用 order-lg-2) -->
+            <div class="col-lg-6 order-lg-2">
+              <h2 class="feature-subtitle">自信的表達與毅力的展現</h2>
+              <p class="feature-text">
+                蒙特梭利教具本身對小朋友們而言就具備一定的吸引力，學習一項教具能引出對另一樣教具的興趣。
+              </p>
+              <p class="feature-text">
+                當小朋友們<span class="highlight">獨立完成教具工作</span
+                >後，會具備更高度的信心，鼓勵自己挑戰更困難的工作。這就是蒙特梭利小朋友們自信的表達與毅力的展現。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 具體而真實的連結 (淡藍底) -> 圖片在右 -->
+      <section class="section-wrapper bg-light-blue">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 文字區塊 (左) -->
+            <div class="col-lg-6">
+              <h2 class="feature-subtitle">連結真實的生活環境</h2>
+              <p class="feature-text">
+                在蒙特梭利的環境裡，所有為小朋友們預備的每項教具，都具備有一定的相關聯性，<span
+                  class="highlight"
+                  >具體而真實</span
+                >。
+              </p>
+              <p class="feature-text">
+                我們讓小朋友們觸摸真實的教具，連結真實的生活環境，並進一步將所學運用在生活當中，實現教育即生活的理念。
+              </p>
+            </div>
+            <!-- 圖片區塊 (右) -->
+            <div class="col-lg-6 text-center">
+              <img
+                src="../image/蒙特梭利教育理論-真實生活.jpg"
+                alt="真實生活"
+                class="theory-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 意志力與專注力的堆疊 (暖色卡片) -> 圖片在左 -->
+      <section class="section-wrapper bg-warm-card">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- 圖片區塊 (左) -->
+            <div class="col-lg-6 order-lg-1 text-center">
+              <img
+                src="../image/蒙特梭利教育理論-自我感覺.jpg"
+                alt="自我感覺"
+                class="theory-img"
+              />
+            </div>
+            <!-- 文字區塊 (右) -->
+            <div class="col-lg-6 order-lg-2">
+              <h2 class="feature-subtitle">自我察覺與思維昇華</h2>
+              <p class="feature-text">
+                小朋友們在透過具體真實的教具，於練習中產生真實寶貴的記憶。在不斷重複操作教具的過程中，讓小朋友們的<span
+                  class="highlight"
+                  >自我察覺、意志力與專注力</span
+                >的能力得以堆疊。
+              </p>
+              <p class="feature-text">
+                並進一步延展至生活中，發現問題進而解決問題，正增強小朋友的成就感，進一步昇華至其本身自信與思維的豐富。
+              </p>
+              <hr
+                class="my-4"
+                style="border-top: 3px dashed var(--brand-orange); opacity: 0.5"
+              />
+              <p class="feature-text mb-0 text-center" style="font-weight: 500">
+                透過完備的蒙特梭利教育系統，吸引小朋友們的主動學習動機，增進心智的發展，在這過程當中，小朋友們定當能獲得<strong
+                  style="color: var(--brand-blue); font-size: 1.3rem"
+                  >自我肯定與信心的滿足</strong
+                >。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // 載入 Header
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              console.log(
+                "Error loading Kindergartenheader.html: " +
+                  xhr.status +
+                  " " +
+                  xhr.statusText
+              );
+            } else {
+              // 自動調整圖片與連結路徑
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            // 自動調整圖片路徑
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>

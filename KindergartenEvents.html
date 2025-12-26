@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>誠悅蒙特梭利幼兒園 - 活動公告與公益</title>
+
+    <!-- 1. Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 2. Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 3. 引入主樣式表 (修正路徑) -->
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <!-- 4. 引入幼兒園專用樣式 (修正路徑) -->
+    <link href="../css/Kindergarten.css" rel="stylesheet" />
+
+    <style>
+      /* 本頁專屬樣式 (保留原樣) */
+      .content-area {
+        padding-top: 40px;
+        padding-bottom: 60px;
+        min-height: 600px;
+      }
+
+      .page-title {
+        color: #003366;
+        font-weight: 700;
+        border-bottom: 3px solid #ff6600;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+      }
+
+      /* 標籤頁樣式 */
+      .nav-tabs .nav-link {
+        color: #555;
+        font-weight: 500;
+        border: none;
+        border-bottom: 3px solid transparent;
+        padding: 10px 20px;
+        margin-right: 5px;
+        transition: all 0.3s;
+      }
+
+      .nav-tabs .nav-link:hover {
+        color: #ff6600;
+        border-color: #ffcc99;
+      }
+
+      .nav-tabs .nav-link.active {
+        color: #003366;
+        background-color: transparent;
+        border-bottom: 3px solid #003366;
+        font-weight: 700;
+      }
+
+      /* 活動卡片樣式 */
+      .event-card {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .event-img-wrapper {
+        position: relative;
+        padding-top: 56.25%; /* 16:9 比例 */
+        overflow: hidden;
+        background-color: #eee;
+      }
+
+      .event-img-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .event-card:hover .event-img-wrapper img {
+        transform: scale(1.05);
+      }
+
+      .event-date-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #ff6600;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-body {
+        padding: 1.25rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .event-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .event-desc {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        flex-grow: 1;
+      }
+
+      .edu-meaning {
+        background-color: #f8f9fa;
+        border-left: 4px solid #20c997;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        color: #444;
+        margin-top: auto;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .charity-extension {
+        margin-top: 8px;
+        font-size: 0.85rem;
+        color: #d63384;
+        font-weight: 500;
+      }
+
+      .badge-charity {
+        background-color: #20c997;
+        color: white;
+      }
+
+      .badge-activity {
+        background-color: #ffc107;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header 容器 -->
+    <div id="divHeader"></div>
+
+    <!-- 主要內容區 -->
+    <main class="container content-area">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="page-title">活動公告與公益 EVENTS</h1>
+
+          <!-- 標籤切換選單 -->
+          <ul class="nav nav-tabs mb-4" id="eventTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="activity-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#activity-content"
+                type="button"
+                role="tab"
+                aria-controls="activity-content"
+                aria-selected="true"
+              >
+                🎉 活動公告
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="charity-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#charity-content"
+                type="button"
+                role="tab"
+                aria-controls="charity-content"
+                aria-selected="false"
+              >
+                ❤️ 公益活動
+              </button>
+            </li>
+          </ul>
+
+          <!-- 內容區塊 -->
+          <div class="tab-content" id="eventTabsContent">
+            <!-- 1. 活動公告列表 -->
+            <div
+              class="tab-pane fade show active"
+              id="activity-content"
+              role="tabpanel"
+              aria-labelledby="activity-tab"
+            >
+              <div class="row g-4">
+                <!-- Activity Item 1 -->
+                <div class="col-md-6 col-lg-4">
+                  <div class="event-card">
+                    <div class="event-img-wrapper">
+                      <img
+                        src="https://placehold.co/600x400/fff3cd/666?text=Picture"
+                        alt="圖片一"
+                      />
+                      <span class="event-date-badge">2024/12/25</span>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge badge-activity mb-2 align-self-start"
+                        >節慶活動</span
+                      >
+                      <h3 class="event-title">JOY誠悅親子遊</h3>
+                      <p class="event-desc">
+                        誠摯邀請家長與孩子一同參與我們的JOY誠悅親子遊，共度溫馨時光。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Activity Item 2 -->
+                <div class="col-md-6 col-lg-4">
+                  <div class="event-card">
+                    <div class="event-img-wrapper">
+                      <img
+                        src="https://placehold.co/600x400/e2e3e5/666?text=Picture2"
+                        alt="畢業典禮"
+                      />
+                      <span class="event-date-badge">2024/07/15</span>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge badge-activity mb-2 align-self-start"
+                        >重要典禮</span
+                      >
+                      <h3 class="event-title">第十屆畢業典禮</h3>
+                      <p class="event-desc">
+                        見證孩子們成長的重要時刻，祝福他們展翅高飛。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Activity Item 3 -->
+                <div class="col-md-6 col-lg-4">
+                  <div class="event-card">
+                    <div class="event-img-wrapper">
+                      <img
+                        src="https://placehold.co/600x400/d1e7dd/666?text=Picture3"
+                        alt="校外教學"
+                      />
+                      <span class="event-date-badge">2024/05/20</span>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge badge-activity mb-2 align-self-start"
+                        >戶外探索</span
+                      >
+                      <h3 class="event-title">春季校外教學</h3>
+                      <p class="event-desc">
+                        前往植物園進行生態探索，讓孩子親近大自然。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. 公益活動列表 -->
+            <div
+              class="tab-pane fade"
+              id="charity-content"
+              role="tabpanel"
+              aria-labelledby="charity-tab"
+            >
+              <div class="row g-4">
+                <!-- 1. 愛心捐物活動 -->
+                <div class="col-md-6 col-lg-4">
+                  <div class="event-card">
+                    <div class="event-img-wrapper">
+                      <img
+                        src="https://placehold.co/600x400/d1e7dd/1d7a57?text=Donation"
+                        alt="愛心捐物"
+                      />
+                      <span class="event-date-badge">常態活動</span>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge badge-charity mb-2 align-self-start"
+                        >物資捐贈</span
+                      >
+                      <h3 class="event-title">愛心捐物活動</h3>
+                      <p class="event-desc">
+                        鼓勵家庭捐贈不再使用但狀況良好的玩具、童書、衣物，轉贈給育幼院或需要的家庭。
+                      </p>
+                      <div class="edu-meaning">
+                        <strong>🌱 教育意義：</strong>教導孩子分享與關懷他人。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. 小小義賣會 -->
+                <div class="col-md-6 col-lg-4">
+                  <div class="event-card">
+                    <div class="event-img-wrapper">
+                      <img
+                        src="https://placehold.co/600x400/ffecb3/ff6f00?text=Charity+Sale"
+                        alt="小小義賣會"
+                      />
+                      <span class="event-date-badge">年度活動</span>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge badge-charity mb-2 align-self-start"
+                        >義賣活動</span
+                      >
+                      <h3 class="event-title">小小義賣會</h3>
+                      <p class="event-desc">
+                        孩子與家長一起準備手作小物（如畫作、簡單點心），在校園舉辦義賣，收益捐給慈善機構。
+                      </p>
+                      <div class="edu-meaning">
+                        <strong>🌱 教育意義：</strong
+                        >認識「付出」的價值，培養責任感與成就感。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. 公益故事時間 -->
+                <div class="col-md-6 col-lg-4">
+                  <div class="event-card">
+                    <div class="event-img-wrapper">
+                      <img
+                        src="https://placehold.co/600x400/e1bee7/4a148c?text=Story+Time"
+                        alt="公益故事"
+                      />
+                      <span class="event-date-badge">每月活動</span>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge badge-charity mb-2 align-self-start"
+                        >生命教育</span
+                      >
+                      <h3 class="event-title">公益故事時間</h3>
+                      <p class="event-desc">
+                        邀請公益團體講師或故事媽媽分享關於助人、友善動物等主題的故事。
+                      </p>
+                      <div class="edu-meaning">
+                        <strong>🌱 教育意義：</strong
+                        >透過故事引導孩子思考社會議題與道德價值。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4. 小手護地球：回收分類體驗日 -->
+                <div class="col-md-6 col-lg-4">
+                  <div class="event-card">
+                    <div class="event-img-wrapper">
+                      <img
+                        src="https://placehold.co/600x400/c8e6c9/1b5e20?text=Recycle"
+                        alt="回收分類"
+                      />
+                      <span class="event-date-badge">環保教育</span>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge badge-charity mb-2 align-self-start"
+                        >環境保護</span
+                      >
+                      <h3 class="event-title">小手護地球：回收分類體驗日</h3>
+                      <p class="event-desc">
+                        設置簡易的資源回收站，讓孩子學習分類紙類、塑膠、金屬等資源。
+                      </p>
+                      <div class="charity-extension mb-2">
+                        💡
+                        公益延伸：募集可回收瓶罐，兌換公益基金或支持環保團體。
+                      </div>
+                      <div class="edu-meaning">
+                        <strong>🌱 教育意義：</strong
+                        >培養孩子從小愛護地球、認識永續生活。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 5. 動物朋友關懷日 -->
+                <div class="col-md-6 col-lg-4">
+                  <div class="event-card">
+                    <div class="event-img-wrapper">
+                      <img
+                        src="https://placehold.co/600x400/ffccbc/bf360c?text=Animals"
+                        alt="動物關懷"
+                      />
+                      <span class="event-date-badge">動保教育</span>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge badge-charity mb-2 align-self-start"
+                        >尊重生命</span
+                      >
+                      <h3 class="event-title">動物朋友關懷日</h3>
+                      <p class="event-desc">
+                        邀請動保團體來校介紹流浪動物故事，孩子可製作小毛毯、罐頭包裝卡片等捐贈。
+                      </p>
+                      <div class="edu-meaning">
+                        <strong>🌱 教育意義：</strong
+                        >培養孩子對生命的尊重與愛心。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 6. 希望種子計畫：種植公益 -->
+                <div class="col-md-6 col-lg-4">
+                  <div class="event-card">
+                    <div class="event-img-wrapper">
+                      <img
+                        src="https://placehold.co/600x400/dcedc8/33691e?text=Planting"
+                        alt="種植公益"
+                      />
+                      <span class="event-date-badge">食農教育</span>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge badge-charity mb-2 align-self-start"
+                        >社區美化</span
+                      >
+                      <h3 class="event-title">希望種子計畫：種植公益</h3>
+                      <p class="event-desc">
+                        孩子與家長一起種下植物，義賣盆栽支持弱勢團體，或送往社區據點美化環境。
+                      </p>
+                      <div class="edu-meaning">
+                        <strong>🌱 教育意義：</strong
+                        >學習耕種與耐心，並將成果回饋社會。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 7. 小小消防英雄日／安全教育公益週 -->
+                <div class="col-md-6 col-lg-4">
+                  <div class="event-card">
+                    <div class="event-img-wrapper">
+                      <img
+                        src="https://placehold.co/600x400/ffcdd2/b71c1c?text=Firefighter"
+                        alt="消防體驗"
+                      />
+                      <span class="event-date-badge">防災安全</span>
+                    </div>
+                    <div class="card-body">
+                      <span class="badge badge-charity mb-2 align-self-start"
+                        >防災教育</span
+                      >
+                      <h3 class="event-title">
+                        小小消防英雄日／安全教育公益週
+                      </h3>
+                      <p class="event-desc">
+                        與消防局、警察局合作舉辦體驗活動，學習防災知識。
+                      </p>
+                      <div class="charity-extension mb-2">
+                        💡 公益延伸：義賣防災繪本、小物品，收益支持受災家庭。
+                      </div>
+                      <div class="edu-meaning">
+                        <strong>🌱 教育意義：</strong
+                        >提升安全意識，強化公共服務的認識。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Tab Content -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer 容器 -->
+    <div id="divFooter"></div>
+
+    <!-- JS 載入 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // [修正] 載入 Header (使用幼兒園專用 header)
+        $("#divHeader").load(
+          "Kindergartenheader.html",
+          function (response, status, xhr) {
+            if (status == "error") {
+              // Fallback: 如果同層找不到，找上一層
+              $("#divHeader").load("../header.html");
+            } else {
+              // [修正] 自動調整圖片與連結路徑
+              setTimeout(function () {
+                $("#divHeader a.navbar-brand").attr("href", "../index.html");
+                $("#divHeader img").each(function () {
+                  var src = $(this).attr("src");
+                  if (src && src.indexOf("./") === 0) {
+                    $(this).attr("src", "." + src);
+                  }
+                });
+                // Active 狀態
+                $("#divHeader .nav-link").each(function () {
+                  var href = $(this).attr("href");
+                  if (href && window.location.href.indexOf(href) > -1) {
+                    $(this).addClass("active");
+                  }
+                });
+              }, 50);
+            }
+          }
+        );
+
+        // [修正] 載入 Footer
+        $("#divFooter").load("../foot.html", function (response, status, xhr) {
+          if (status == "error") {
+            $("#divFooter").load("foot.html");
+          } else {
+            // 自動調整圖片路徑
+            setTimeout(function () {
+              $("#divFooter img").each(function () {
+                var src = $(this).attr("src");
+                if (src.indexOf("./") === 0) {
+                  $(this).attr("src", "." + src);
+                }
+              });
+            }, 50);
+          }
+        });
+
+        // 頁面淡入
+        document.body.style.opacity = 1;
+      });
+    </script>
+  </body>
+</html>
