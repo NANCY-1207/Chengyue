@@ -1,0 +1,388 @@
+@charset "UTF-8";
+
+/* =========================================
+   1. 變數設定 (藍/綠/橘 活潑配色)
+   ========================================= */
+:root {
+  /* 主色調：海洋藍 (專業、信任) */
+  --brand-blue: #0081a7;
+  /* 輔助色：草地綠 (成長、自然) */
+  --brand-green: #00afb9;
+  /* 強調色：活力橘 (快樂、能量) - [修改] 更新色碼 */
+  --brand-orange: #f09967;
+  /* 背景色：米白 (溫暖舒適) - [修改] 暖色背景 */
+  --brand-bg: #fffdf5;
+
+  /* 文字顏色 */
+  --text-dark: #333333;
+  --text-gray: #666666;
+
+  /* 圓角設定 */
+  --radius-sm: 8px;
+  --radius-md: 15px;
+  --radius-lg: 30px;
+}
+
+/* =========================================
+   2. 全域與導覽列 (Header)
+   ========================================= */
+body {
+  font-family: "Quicksand", "Noto Sans TC", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--brand-bg);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+/* Navbar 基底 */
+.navbar {
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 1.5rem;
+  border-top: 5px solid var(--brand-blue); /* 頂部藍色線條 */
+  backdrop-filter: blur(10px);
+}
+
+/* Logo 設定 */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--brand-blue) !important;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  height: 80px; /* [修改] Logo 放大 */
+  width: auto;
+  margin-right: 12px;
+  border-radius: var(--radius-sm);
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+.brand-text {
+  font-size: 15px;
+  color: #333;
+}
+.brand-text span:first-child {
+  font-size: 1.35rem;
+  letter-spacing: 0.5px;
+}
+.brand-text span:last-child {
+  font-size: 0.9rem;
+}
+
+/* 導覽連結 */
+.nav-link {
+  color: #555 !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.6rem 1.4rem !important;
+  transition: all 0.2s ease;
+  border-radius: 50px;
+  margin: 0 3px;
+  text-align: center;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: #000000 !important;
+  background-color: var(--brand-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(240, 153, 103, 0.3);
+}
+
+/* 下拉選單 */
+.dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  border-top: 4px solid var(--brand-green);
+  overflow: hidden;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #f0fdf4;
+  color: var(--brand-green) !important;
+}
+
+/* 漢堡選單 */
+.navbar-toggler {
+  border: none;
+  color: var(--brand-blue);
+}
+
+/* RWD 設定 */
+@media (min-width: 992px) {
+  .dropdown-menu {
+    display: block;
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: all 0.25s ease;
+  }
+  .nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+@media (max-width: 991px) {
+  .dropdown-menu {
+    display: none;
+    border-top: none;
+    border-left: 3px solid var(--brand-green);
+  }
+  .dropdown-menu.show {
+    display: block;
+  }
+  .navbar-brand img {
+    height: 55px;
+  } /* 手機版 Logo 縮小 */
+  .brand-text span:first-child {
+    font-size: 1.1rem;
+  }
+  .navbar-nav .nav-link {
+    text-align: left;
+    padding-left: 1rem;
+    border-radius: 10px;
+    margin: 5px 0;
+  }
+}
+
+/* =========================================
+   3. 首頁專屬區塊 (Hero, Cards, News)
+   ========================================= */
+
+/* Banner */
+.hero-section {
+  margin-bottom: 3rem;
+  position: relative;
+}
+.hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+.hero-img:hover {
+  transform: scale(1.02);
+}
+
+/* 標題樣式 */
+.section-title {
+  color: var(--brand-blue);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 6px;
+  background-color: var(--brand-orange);
+  margin-top: 5px;
+  border-radius: 10px;
+}
+.section-text {
+  font-size: 1.15rem;
+  color: #555;
+  text-align: justify;
+}
+
+/* 核心理念 (藍框) */
+.idea-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  border: 3px solid var(--brand-blue);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 功能選單 (藍框) */
+.menu-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+  height: 100%;
+  border: 3px solid var(--brand-blue);
+}
+.menu-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+}
+.menu-card h5 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+.menu-card span {
+  font-size: 0.9rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  color: #999;
+}
+.menu-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--brand-orange);
+}
+
+/* 最新消息 (橘框) */
+.news-container {
+  background-color: #fff;
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  border: 3px solid var(--brand-orange);
+}
+.news-title {
+  color: var(--brand-blue);
+  font-weight: 800;
+  border-bottom: 2px dashed #eee;
+  padding-bottom: 15px;
+}
+.news-item {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+@media (min-width: 576px) {
+  .news-item {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.news-date {
+  background-color: var(--brand-orange);
+  color: #fff;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  display: inline-block;
+  width: fit-content;
+  font-family: "Quicksand", sans-serif;
+}
+@media (min-width: 576px) {
+  .news-date {
+    margin-bottom: 0;
+    margin-right: 15px;
+  }
+}
+
+.news-link {
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  transition: color 0.2s;
+  font-size: 1.05rem;
+}
+.news-link:hover {
+  color: var(--brand-blue);
+}
+
+/* 分頁 */
+.pagination .page-link {
+  border: none;
+  margin: 0 5px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--brand-blue);
+  background: #f0f8ff;
+}
+.pagination .page-link:hover {
+  background-color: var(--brand-green);
+  color: white;
+}
+.pagination .page-item.active .page-link {
+  background-color: var(--brand-blue);
+  color: white;
+}
+
+/* =========================================
+   4. 頁尾 (Footer)
+   ========================================= */
+footer {
+  background-color: var(--brand-blue);
+  color: #fff;
+  padding: 60px 0 30px;
+  margin-top: 5rem;
+  border-top: 8px solid var(--brand-green);
+  border-radius: 30px 30px 0 0;
+}
+.footer-brand img {
+  width: 150px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+footer h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--brand-bg);
+}
+.footer-list a {
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+}
+.footer-list a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+.square-icon {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--brand-orange);
+  margin-right: 12px;
+  border-radius: 50%;
+}
+.copyright {
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.6);
+}

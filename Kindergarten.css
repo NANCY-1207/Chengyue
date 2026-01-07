@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+/* [幼兒園版] 專屬樣式表
+   - 已更新背景色為 #fffdf5 (暖色)
+   - 已更新橘色為 #f09967
+   - 樣式風格與主網站一致
+   - [修改] 導覽列字體縮小
+   - [修改] LOGO 調整大小
+*/
+
+:root {
+  /* 統一變數 */
+  --brand-blue: #0081a7;
+  --brand-green: #00afb9;
+  --brand-orange: #f09967;
+  --brand-bg: #fffdf5;
+
+  --text-dark: #333333;
+  --radius-sm: 8px;
+  --radius-md: 15px;
+  --radius-lg: 30px;
+}
+
+/* 全域背景設定 */
+body {
+  font-family: "Quicksand", "Noto Sans TC", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--brand-bg);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Navbar 基底 */
+.navbar {
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 1.5rem;
+  border-top: 5px solid var(--brand-blue);
+  backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled {
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo 與文字 */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--brand-blue) !important;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Logo 圖片設定 */
+.navbar-brand img {
+  height: 80px; /* [修改] 從 90px 縮小至 80px */
+  width: auto;
+  margin-right: 15px;
+  border-radius: var(--radius-sm);
+  transition: transform 0.3s ease;
+}
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+/* 品牌文字 */
+.brand-text {
+  font-size: 13px;
+  color: #333;
+  font-family: "Quicksand", "Noto Sans TC", sans-serif;
+}
+
+/* 導覽連結 */
+.navbar-nav .nav-link {
+  color: #555 !important;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 50px;
+  margin: 0 2px;
+}
+
+/* Hover 樣式 (橘色膠囊) */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.active {
+  color: #fff !important;
+  background-color: var(--brand-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(240, 153, 103, 0.3);
+}
+
+/* 下拉選單 */
+.dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  border-top: 4px solid var(--brand-green);
+  overflow: hidden;
+}
+.dropdown-item {
+  font-size: 0.85rem;
+  padding: 10px 20px;
+  color: #333 !important;
+  font-weight: 500;
+}
+.dropdown-item:hover {
+  background-color: #f0fdf4;
+  color: var(--brand-green) !important;
+}
+
+/* RWD */
+@media (min-width: 992px) {
+  .dropdown-menu {
+    display: block;
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: all 0.25s ease;
+  }
+  .nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+@media (max-width: 991px) {
+  .dropdown-menu {
+    display: none;
+    background-color: #fff !important;
+    box-shadow: none;
+    padding-left: 20px;
+    border-top: none;
+    border-left: 3px solid var(--brand-green);
+  }
+  .dropdown-menu.show {
+    display: block;
+  }
+
+  .navbar-brand {
+    font-size: 0.8rem;
+  }
+  .navbar-brand img {
+    height: 50px;
+    width: auto;
+  } /* [修改] 從 60px 縮小至 50px */
+
+  .navbar-nav .nav-link {
+    text-align: left;
+    padding-left: 1rem;
+    border-radius: 10px;
+    margin: 5px 0;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    transform: translateX(5px);
+    background-color: transparent;
+    color: var(--brand-orange) !important;
+    box-shadow: none;
+  }
+}
